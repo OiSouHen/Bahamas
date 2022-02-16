@@ -122,7 +122,7 @@ end)
 Citizen.CreateThread(function()
 	while true do
 		if GetGameTimer() >= timeDate then
-			timeDate = GetGameTimer() + 30000
+			timeDate = GetGameTimer() + 10000
 			clockMinutes = clockMinutes + 1
 
 			if clockMinutes >= 60 then
@@ -135,7 +135,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(10000)
+		Citizen.Wait(5000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -484,29 +484,36 @@ end)
 -- THREADHEALTHREDUCE
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
+	local foodTimers = GetGameTimer()
+
 	while true do
 		if playerActive then
-			local ped = PlayerPedId()
-			if GetEntityHealth(ped) > 101 then
-				if clientHunger >= 10 and clientHunger <= 20 then
-					ApplyDamageToPed(ped,1,false)
-					TriggerEvent("Notify","hunger","Sofrendo com a fome.",3000)
-				elseif clientHunger <= 9 then
-					ApplyDamageToPed(ped,2,false)
-					TriggerEvent("Notify","hunger","Sofrendo com a fome.",3000)
-				end
+			if GetGameTimer() >= foodTimers then
+				foodTimers = GetGameTimer() + 10000
 
-				if clientThirst >= 10 and clientThirst <= 20 then
-					ApplyDamageToPed(ped,1,false)
-					TriggerEvent("Notify","thirst","Sofrendo com a sede.",3000)
-				elseif clientThirst <= 9 then
-					ApplyDamageToPed(ped,2,false)
-					TriggerEvent("Notify","thirst","Sofrendo com a sede.",3000)
+				local ped = PlayerPedId()
+				local health = GetEntityHealth(ped)
+				if health > 101 then
+					if clientHunger >= 10 and clientHunger <= 20 then
+						SetEntityHealth(ped,health - 1)
+						TriggerEvent("Notify","hunger","Sofrendo com a fome.",3000)
+					elseif clientHunger <= 9 then
+						SetEntityHealth(ped,health - 2)
+						TriggerEvent("Notify","hunger","Sofrendo com a fome.",3000)
+					end
+
+					if clientThirst >= 10 and clientThirst <= 20 then
+						SetEntityHealth(ped,health - 1)
+						TriggerEvent("Notify","thirst","Sofrendo com a sede.",3000)
+					elseif clientThirst <= 9 then
+						SetEntityHealth(ped,health - 2)
+						TriggerEvent("Notify","thirst","Sofrendo com a sede.",3000)
+					end
 				end
 			end
 		end
 
-		Citizen.Wait(5000)
+		Citizen.Wait(1000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
