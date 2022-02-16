@@ -43,10 +43,32 @@ local divingTimers = GetGameTimer()
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- CLOCKVARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
-local clockHours = 18
+local clockHours = 13
 local clockMinutes = 0
 local weatherSync = "CLEAR"
 local timeDate = GetGameTimer()
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- MUMBLABLES
+-----------------------------------------------------------------------------------------------------------------------------------------
+local Mumble = false
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- MUMBLECONNECTED
+-----------------------------------------------------------------------------------------------------------------------------------------
+AddEventHandler("mumbleConnected",function()
+	if not Mumble then
+		SendNUIMessage({ mumble = false })
+		Mumble = true
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- MUMBLEDISCONNECTED
+-----------------------------------------------------------------------------------------------------------------------------------------
+AddEventHandler("mumbleDisconnected",function()
+	if Mumble then
+		SendNUIMessage({ mumble = true })
+		Mumble = false
+	end
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VRP:PLAYERACTIVE
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -62,7 +84,7 @@ Citizen.CreateThread(function()
 		if playerActive then
 			if divingMask ~= nil then
 				if GetGameTimer() >= divingTimers then
-					divingTimers = GetGameTimer() + 35000
+					divingTimers = GetGameTimer() + 30000
 					clientOxigen = clientOxigen - 1
 					vRPS.clientOxigen()
 
@@ -137,7 +159,7 @@ Citizen.CreateThread(function()
 			DisableControlAction(1,75,true)
 		end
 
-		Citizen.Wait(0)
+		Citizen.Wait(1)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -158,23 +180,30 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 Citizen.CreateThread(function()
 	while true do
+		local timeDistance = 999
 		if playerActive then
 			if IsPauseMenuActive() then
 				SendNUIMessage({ hud = false })
 				pauseBreak = true
 			else
-				if pauseBreak and showHud then
-					SendNUIMessage({ hud = true })
-					pauseBreak = false
-				end
-			end
+				if showHud then
+					if pauseBreak then
+						SendNUIMessage({ hud = true })
+						pauseBreak = false
+						updateDisplayHud()
+					else
+						updateDisplayHud()
 
-			if showHud then
-				updateDisplayHud()
+						local ped = PlayerPedId()
+						if IsPedInAnyVehicle(ped) then
+							timeDistance = 500
+						end
+					end
+				end
 			end
 		end
 
-		Citizen.Wait(500)
+		Citizen.Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

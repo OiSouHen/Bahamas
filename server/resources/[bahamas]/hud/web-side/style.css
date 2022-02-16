@@ -395,3 +395,13 @@ svg {
 	background: #000;
 	position: absolute !important;
 }
+
+#Mumble {
+	color: #ccc;
+	display: flex;
+	padding: 20px 0;
+	letter-spacing: 2px;
+	justify-content: center;
+	text-transform: uppercase;
+	background: rgba(15,15,15,.75);
+}

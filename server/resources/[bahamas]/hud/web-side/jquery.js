@@ -5,7 +5,7 @@ var lastStress = 999;
 var lastHunger = 999;
 var lastOxigen = 999;
 var lastWater = 999;
-
+// -------------------------------------------------------------------------------------------
 $(document).ready(function(){
 	window.addEventListener("message",function(event){
 		if (event["data"]["progress"] == true){
@@ -40,6 +40,16 @@ $(document).ready(function(){
 
 				$("#textProgress").html(parseInt(timeSlamp / 1000));
 				$("#progressDisplay").css("stroke-dashoffset",tickPerc);
+			}
+
+			return
+		}
+		
+		if (event["data"]["mumble"] !== undefined){
+			if (event["data"]["mumble"] == true){
+				$("#Mumble").css("display","flex");
+			} else {
+				$("#Mumble").css("display","none");
 			}
 
 			return
