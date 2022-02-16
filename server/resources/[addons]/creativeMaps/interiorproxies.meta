@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SInteriorOrderData>
+	<startFrom value="2500" />
+	<filePathHash value="0" />
+	<proxies>
+		<Item>breze_benefactor_milo_</Item>
+		<Item>breze_church_milo_</Item>
+		<Item>k4mb1_mirrorparkauto2_milo_</Item>
+		<Item>k4mb1_mirrorparkauto_milo_</Item>
+		<Item>lr_cs6_03_interior_v_carmod3_milo_</Item>
+		<Item>denis3d_hayes_auto_milo_</Item>
+		<Item>gabz_pillbox_dlc_milo_</Item>
+		<Item>gabz_pillbox_milo_</Item>
+		<Item>denis3d_impound_office_milo_</Item>
+		<Item>gabz_lr_sc1_02_interior_0_supermod_int_milo_</Item>
+		<Item>int_genstore_milo_</Item>
+		<Item>int_palpills_milo_</Item>
+		<Item>v_clinick</Item>
+		<Item>brown_gunshop_milo_</Item>
+		<Item>sanhje_Prison_cafeteria_placement</Item>
+		<Item>sanhje_Prison_placement</Item>
+		<Item>sanhje_Prison_infirmary_placement</Item>
+		<Item>sanhje_prison_reception_placement</Item>
+		<Item>smokey_irishpubap_milo</Item>
+		<Item>smokey_irishpub_milo</Item>
+		<Item>int_shosp_milo_</Item>
+		<Item>np_town_hall_milo_</Item>
+		<Item>zn_bullguer_mlo</Item>
+		<Item>weazel_milo</Item>
+		<Item>zn_bullguer_mlo</Item>
+		<Item>zn_cativeiro_mlo</Item>
+		<Item>brofx_mafia_mlo</Item>
+		<Item>zn_army02_01_mlo</Item>
+		<Item>zn_army02_03_mlo</Item>
+		<Item>zn_army02_02_mlo</Item>
+		<Item>zn_army_03_mlo</Item>
+		<Item>zn_army_04_mlo</Item>
+		<Item>zn_army_05_mlo</Item>
+		<Item>zn_army_01_mlo</Item>
+		<Item>zn_army_06_mlo</Item>
+		<Item>zn_army_02_mlo</Item>
+		<Item>01_sc1_33_build05</Item>
+		<Item>02_sc1_27_shp</Item>
+		<Item>03_sc1_10_shop</Item>
+		<Item>04_sc1_25_res01</Item>
+		<Item>05_sc1_24_build07</Item>
+		<Item>06_vb_30_bld1a</Item>
+		<Item>07_ch3_10_b3</Item>
+		<Item>08_id1_29_bld2</Item>
+		<Item>09_vb_05_b5</Item>
+	</proxies>
+</SInteriorOrderData>
