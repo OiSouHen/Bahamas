@@ -1,0 +1,95 @@
+::-webkit-scrollbar { background: transparent; width: 0; }
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+
+* {
+	font-size: 13px;
+	color: #b1aac9;
+	-webkit-user-select: none;
+	font-family: "Roboto",Arial,Helvetica,sans-serif;
+}
+
+.body {
+	right: 0;
+	top: 18%;
+	height: 62%;
+	width: 300px;
+	overflow: hidden;
+	position: absolute;
+}
+
+.notification {
+	float: left;
+	width: 275px;
+	background: #2d2740;
+	margin-bottom: 10px;
+	border-top-left-radius: 2px;
+	padding: 15px 10px 15px 15px;
+	border-bottom-left-radius: 2px;
+	border-left: 5px solid #232630;
+}
+
+.content {
+	float: left;
+	width: 230px;
+}
+
+.buttons {
+	float: left;
+	width: 30px;
+}
+
+.content-line {
+	float: left;
+	margin-top: 5px;
+	min-width: 220px;
+	max-width: 220px;
+	padding: 4px 0 0 5px;
+}
+
+.chamados {
+	float: left;
+	width: 30px;
+	height: 30px;
+	margin-top: 3px;
+	text-align: center;
+}
+
+.chamados svg {
+	font-size: 22px;
+}
+
+.code {
+	float: left;
+	color: #a0ceb6;
+	font-size: 11px;
+	padding: 5px 10px;
+	margin-right: 10px;
+	border-radius: 3px;
+	background: #2e6e4c;
+	box-shadow: 0 1px 0 #2c303c;
+	text-shadow: 1px 1px #225138;
+}
+
+.titulo {
+	float: left;
+	min-width: 167px;
+	max-width: 167px;
+	overflow: hidden;
+	padding: 4px 0 3px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	text-shadow: 1px 1px #2c303c;
+}
+
+.texto {
+	float: left;
+	color: #3f3f3f;
+	margin-top: 13px;
+	min-width: 240px;
+	max-width: 240px;
+	line-height: 16px;
+	padding: 8px 10px;
+	border-radius: 2px;
+	background: #c1bebe;
+}

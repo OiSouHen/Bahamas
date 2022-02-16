@@ -1,0 +1,156 @@
+.color-0 {
+	color: #c3c3c3;
+}
+
+.color-1 {
+	color: #dfdfdf;
+	font-size: 14px;
+}
+
+.color-2 {
+	color: #8bcb00;
+}
+
+.color-3 {
+	color: #e0c117;
+}
+
+.color-4 {
+	color: #dadada;
+}
+
+.color-5 {
+	color: #ff9293;
+}
+
+.color-6 {
+	color: #bfd863;
+}
+
+.color-7 {
+	color: #9ecdeb;
+}
+
+.color-8 {
+	color: #3c3c3c;
+	font-size: 18px;
+	margin-left: 3px;
+	text-shadow: none;
+}
+
+.color-9 {
+	color: #b61717;
+	font-size: 18px;
+	margin-left: 3px;
+	text-shadow: none;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	font-size: 13px;
+	word-wrap: break-word;
+	z-index: 900 !important;
+	text-shadow: 1px 1px rgba(0,0,0,1);
+	font-family: "Roboto",Arial,Helvetica,sans-serif;
+}
+
+.no-grow {
+	flex-grow: 0;
+}
+
+em {
+	font-style: normal;
+}
+
+#app {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.chat-window {
+	top: 50px;
+	left: 50px;
+	width: 500px;
+	height: 300px;
+	position: absolute;
+	box-sizing: border-box;
+}
+
+.chat-messages {
+	height: 300px;
+	overflow: hidden;
+	position: relative;
+}
+
+.chat-input {
+	top: 350px;
+	left: 50px;
+	width: 500px;
+	position: absolute;
+}
+
+.prefix {
+	top: 7.5px;
+	color: #46c883;
+	position: absolute;
+	letter-spacing: 2.5px;
+}
+
+textarea {
+	border: 0;
+	color: #fff;
+	width: 500px;
+	display: block;
+	overflow: hidden;
+	padding: 8px 0 0 64px;
+	box-sizing: border-box;
+	background-color: transparent;
+}
+
+textarea:focus, input:focus {
+	outline: none;
+}
+
+.msg {
+	width: 500px;
+	line-height: 15px;
+	margin-bottom: 10px;
+}
+
+.multiline {
+	white-space: pre-line;
+}
+
+.suggestions {
+	width: 500px;
+	font-size: 13px;
+	margin-top: 10px;
+	line-height: 16px;
+	border-radius: 3px;
+	letter-spacing: 0.7px;
+	list-style-type: none;
+	box-sizing: border-box;
+	padding: 20px 20px 10px;
+	border-left: 5px solid #2e6e4c;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.help {
+	font-weight: 300;
+	font-size: 11px;
+	opacity: 0.5;
+}
+
+.disabled {
+	color: #46c883;
+}
+
+.suggestion {
+	margin-bottom: 10px;
+}
+
+.hidden {
+	display: none;
+}

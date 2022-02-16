@@ -1,0 +1,131 @@
+html,body {
+	margin: 0;
+	color: #c0c0c0;
+	font-size: 12px;
+	overflow: hidden;
+	background: transparent;
+	font-family: "Roboto",Arial,Helvetica,sans-serif;
+}
+
+::-webkit-scrollbar { width: 0; }
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+
+#displayHud {
+	top: 0;
+	right: 0;
+	width: 310px;
+	display: none;
+	padding: 20px;
+	min-height: 100%;
+	max-height: 100%;
+	position: absolute;
+	background: #2d2740;
+}
+
+#buttons {
+	float: left;
+	height: 7vh;
+}
+
+#vehList {
+	float: left;
+	height: 88vh;
+	overflow-y: scroll;
+}
+
+#spawnVehicle {
+	float: left;
+	width: 120px;
+	padding: 15px;
+	color: #95c5ab;
+	border-radius: 4px;
+	margin-bottom: 5px;
+	background: #2e6e4c;
+	letter-spacing: .3px;
+}
+
+#spawnVehicle:hover {
+	background: #39875e;
+}
+
+#storeVehicle {
+	float: left;
+	width: 120px;
+	padding: 15px;
+	color: #d898ae;
+	margin-left: 10px;
+	border-radius: 4px;
+	margin-bottom: 5px;
+	background: #7c344d;
+	letter-spacing: .3px;
+}
+
+#storeVehicle:hover {
+	background: #913e5b;
+}
+
+#spawnVehicle b, #storeVehicle b {
+	font-size: 14px;
+	font-weight: 300;
+	letter-spacing: .5px;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.9);
+}
+
+#vehicleName {
+	float: left;
+	width: 280px;
+	padding: 15px;
+	color: #cacaca;
+	font-size: 11px;
+	background: #4c4465;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+.vehicle {
+	float: left;
+	width: 270px;
+	color: #413a57;
+	margin-bottom: 15px;
+	background: #b1aac9;
+	padding: 10px 20px 20px;
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+.vehicle:last-child {
+	margin-bottom: 0;
+}
+
+.vehicle.active {
+	background: #c1bad6;
+}
+
+#vehicleLegend {
+	width: 70px;
+	float: left;
+	margin-top: 10px;
+	letter-spacing: .9px;
+}
+
+#vehicleBack {
+	float: left;
+	height: 8px;
+	width: 200px;
+	margin-top: 14px;
+	margin-bottom: 2px;
+	border-radius: 4px;
+	background: #857da0;
+}
+
+#vehicleProgress {
+	float: left;
+	height: 8px;
+	width: 100px;
+	border-radius: 4px;
+	background: #413a57;
+}

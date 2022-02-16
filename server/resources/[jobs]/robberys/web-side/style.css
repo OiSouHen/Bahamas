@@ -1,0 +1,25 @@
+html,body {
+	font-size: 20px;
+	overflow: hidden;
+	background: transparent;
+	font-family: "Jura",sans-serif;
+}
+
+#displayTimers {
+	left: 50px;
+	bottom: 50px;
+	display: none;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: 2px;
+	text-shadow: 1px 1px #000;
+	color: rgba(255,255,255,0.7);
+	position: absolute !important;
+}
+
+#displayTimers legend {
+	font-size: 10px;
+	text-transform: uppercase;
+	color: rgba(255,255,255,0.4);
+	font-family: "Roboto",Arial,Helvetica,sans-serif;
+}

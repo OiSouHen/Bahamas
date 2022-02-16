@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>#bahamas</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+
+	<body>
+		<div id="tattoo-container">
+			<div class="column">
+				<div class="title-area">Categoria</div>
+				<div class="categories">
+					<div class="category" category-name="head"></div>
+					<div class="category" category-name="leftarm"></div>
+					<div class="category" category-name="rightarm"></div>
+					<div class="category" category-name="torso"></div>
+					<div class="category" category-name="leftleg"></div>
+					<div class="category" category-name="rightleg"></div>
+					<div class="category" category-name="hair"></div>
+					<div id="reset">Limpar</div>
+				</div>
+			</div>
+
+			<div class="column" style="text-align: right;"><br><br><br><br>
+				<div class="hotkey">Rotacionar a esquerda <span>[A]</span></div>
+				<div class="hotkey">Rotacionar a direita <span>[D]</span></div>
+				<div class="hotkey">Levantar as mãos <span>[X]</span></div>
+				<div class="hotkey">Salvar e sair <span>[ESC]</span></div>
+			</div>
+
+			<div class="category-items">
+				<div class="title-area" id="category-name">...</div>
+				<div id="items"></div>
+			</div>
+		</div>
+
+		<script src="nui://game/ui/jquery.js"></script>
+		<script src="script.js"></script>
+	</body>
+</html>

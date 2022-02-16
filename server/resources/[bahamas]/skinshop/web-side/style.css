@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+::-webkit-scrollbar { width: 0; }
+::selection { background: transparent; }
+::-moz-selection { background: transparent; }
+
+.container {
+	height: 100vh;
+}
+
+::-webkit-inner-spin-button {
+	display: none;
+}
+
+.clothing-menu-container {
+	top: 0;
+	right: 0;
+	margin: 0;
+	width: 42vh;
+	display: none;
+	height: 100vh;
+	position: absolute;
+	background-color: #2d2740;
+}
+
+.clothing-menu-header {
+	top: 33px;
+	height: 6vh;
+	width: 100%;
+	position: relative;
+}
+
+.clothing-menu-header-btn {
+	height: 55%;
+	top: 2.3vh;
+	float: left;
+	color: #a9a3bf;
+	position: relative;
+	text-align: center;
+	line-height: 3.5vh;
+	background-color: #4d4662;
+	transition: all 0.1s linear;
+}
+
+.clothing-menu-header-btn:hover {
+	background: #5b5372;
+}
+
+.selected {
+	color: #cdc7df;
+	background: #706889;
+}
+
+.clothing-menu-header-btn > p {
+	font-size: 1.1vh;
+	letter-spacing: 0.1vh;
+	text-transform: uppercase;
+}
+
+.clothing-menu-header-cameras {
+	position: absolute;
+	height: 5.5vh;
+	width: 100%;
+	top: -1vh;
+}
+
+.clothing-menu-header-camera-btn {
+	height: 55%;
+	top: 2.3vh;
+	width: 33.33%;
+	float: left;
+	color: #a9a3bf;
+	position: relative;
+	text-align: center;
+	line-height: 3.4vh;
+	background-color: #4d4662;
+	transition: all 0.1s linear;
+}
+
+.selected-cam {
+	color: #cdc7df;
+	background: #706889;
+}
+
+.clothing-menu-header-camera-btn:hover {
+	background: #5b5372;
+}
+
+.clothing-menu-header-camera-btn > i {
+	font-size: 1.4vh;
+}
+
+.clothing-menu-character-container, .clothing-menu-accessoires-container {
+	display: none;
+	position: absolute;
+	margin: 0 auto;
+	left: 0.3vh;
+	right: 0;
+	top: 10.5vh;
+	height: 83vh;
+	width: 92%;
+	overflow-y: scroll !important;
+}
+
+.clothing-menu-option {
+	position: relative;
+	width: 100%;
+	height: 150px;
+	background: #b1aac9;
+	margin-bottom: 15px;
+	border-bottom-right-radius: 4px;
+	border-bottom-left-radius: 4px;
+}
+
+.clothing-menu-option-header {
+	width: 100%;
+	color: #cdc7df;
+	background: #4c4465;
+	padding: 13px 10px 13px;
+}
+
+.clothing-menu-option-header > p {
+	text-transform: uppercase;
+	font-size: 1.0vh;
+	letter-spacing: 0.1vh;
+}
+
+.clothing-menu-option-item {
+	position: relative;
+	float: left;
+	height: 50%;
+	width: 40%;
+	margin-left: 2.5vh;
+	margin-top: 1.2vh;
+}
+
+.clothing-menu-option-item-left {
+	left: 0;
+	bottom: 0;
+	width: 50px;
+	height: 30px;
+	color: #9b92b6;
+	text-align: center;
+	position: absolute;
+	padding-top: 14px;
+	transition: all 0.1s linear;
+	background: #413a57;
+	border-radius: 4px;
+}
+
+.clothing-menu-option-item-left:hover {
+	background: #52496d;
+}
+
+.clothing-menu-option-item-right {
+	right: 0;
+	bottom: 0;
+	width: 50px;
+	height: 30px;
+	color: #9b92b6;
+	text-align: center;
+	position: absolute;
+	padding-top: 14px;
+	transition: all 0.1s linear;
+	background: #413a57;
+	border-radius: 4px;
+}
+
+.clothing-menu-option-item-right:hover {
+	background: #52496d;
+}
+
+.item-number {
+	position: absolute;
+	width: 43px;
+	height: 42px;
+	top: 31px;
+	left: 60px;
+	border: 0;
+	text-align: center;
+	font-size: 12px;
+	letter-spacing: 0.1vh;
+	color: #413a57;
+	outline: none;
+	background: #857da0;
+	transition: all 0.1s linear;
+	border-radius: 4px;
+}
+
+.item-number:focus {
+	background: #988fb7;
+}
+
+.clothing-menu-option-item-header {
+	position: absolute;
+	bottom: 5vh;
+	text-transform: uppercase;
+	font-size: 11px;
+	letter-spacing: 1px;
+	color: #2d2740;
+}
+
+.clothing-menu-option-item-header > p {
+	padding: 0.2vh;
+}
+
+.clothing-menu-option-buttons {
+	position: absolute;
+	bottom: 12px;
+	width: 100%;
+	height: 41px;
+}
+
+.clothing-menu-option-button {
+	float: left;
+	width: 205px;
+	height: 100%;
+	margin-left: 20px;
+	margin-right: 7px;
+	border-radius: 4px;
+	position: relative;
+	background: #2e6e4c;
+	transition: all 0.1s linear;
+}
+
+.clothing-menu-option-button:hover {
+	background: #39875e;
+}
+
+.clothing-menu-option-button > p {
+	margin-top: 14px;
+	font-size: 12px;
+	letter-spacing: 0.1vh;
+	text-transform: uppercase;
+	color: #9bcbb2;
+	text-align: center;
+}
+
+.clothing-menu-option-button2 {
+	float: left;
+	width: 205px;
+	height: 100%;
+	border-radius: 4px;
+	position: relative;
+	background: #7c344d;
+	transition: all 0.1s linear;
+}
+
+.clothing-menu-option-button2:hover {
+	background: #913e5b;
+}
+
+.clothing-menu-option-button2 > p {
+	margin-top: 14px;
+	font-size: 12px;
+	letter-spacing: 0.1vh;
+	text-transform: uppercase;
+	color: #e0a2b7;
+	text-align: center;
+}

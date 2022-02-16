@@ -34,7 +34,6 @@ CREATE TABLE `summerz_characters` (
   `serial` varchar(6) DEFAULT NULL,
   `name` varchar(50) DEFAULT 'Individuo',
   `name2` varchar(50) DEFAULT 'Indigente',
-  `locate` varchar(50) DEFAULT 'Sul',
   `bank` int(11) NOT NULL DEFAULT 1500,
   `fines` int(11) NOT NULL DEFAULT 0,
   `garage` int(3) NOT NULL DEFAULT 1,

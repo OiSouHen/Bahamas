@@ -1,0 +1,56 @@
+html,body {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	overflow: hidden;
+	background: transparent;
+	font-family: "Roboto",Arial,Helvetica,sans-serif;
+}
+
+* {
+	overflow: hidden;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+#displayRunners {
+	right: 64px;
+	bottom: 190px;
+	display: none;
+	color: #939393;
+	line-height: 30px;
+	text-align: right;
+	letter-spacing: 2px;
+	text-shadow: 1px 1px #000;
+	position: absolute !important;
+}
+
+#displayRunners s {
+	width: 120px;
+	float: right;
+	color: #e5e5e5;
+	font-size: 20px;
+	text-align: right;
+	text-decoration: none;
+	font-family: "Jura",sans-serif;
+}
+
+#raceContent {
+	right: 0;
+	width: 345px;
+	bottom: 320px;
+	display: none;
+	color: #c6c6c6;
+	line-height: 30px;
+	letter-spacing: 1px;
+	text-shadow: 1px 1px #000;
+	background: rgba(0,0,0,0.5);
+	border-top-left-radius: 5px;
+	padding: 15px 15px 15px 10px;
+	position: absolute !important;
+	border-bottom-left-radius: 5px;
+}
+
+#raceLine {
+	float: left;
+}

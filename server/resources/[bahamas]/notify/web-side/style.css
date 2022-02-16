@@ -1,0 +1,85 @@
+html {
+	overflow-x: hidden !important;
+	overflow-y: hidden !important;
+	background: transparent !important;
+}
+
+body {
+	background: transparent !important;
+}
+
+#notifications {
+	right: 50px;
+	bottom: 200px;
+	display: flex;
+	color: #c6c6c6;
+	font-size: 13px;
+	max-width: 375px;
+	overflow: hidden;
+	letter-spacing: .5px;
+	align-items: flex-end;
+	flex-direction: column;
+	position: absolute !important;
+	font-family: "Roboto",Arial,Helvetica,sans-serif;
+}
+
+#notifications b {
+	color: #fff;
+	font-weight: 300;
+}
+
+#notifications div {
+	color: #c6c6c6;
+	margin-top: 10px;
+	line-height: 16px;
+	border-radius: 4px;
+	text-shadow: 1px 1px #000;
+	padding: 15px 20px 15px 45px;
+}
+
+#verde {
+	background: rgba(0,0,0,0.5) url("images/check.png") no-repeat center left 11px;
+}
+
+#vermelho {
+	background: rgba(0,0,0,0.5) url("images/cancel.png") no-repeat center left 11px;
+}
+
+#blood {
+	background: rgba(0,0,0,0.5) url("images/blood.png") no-repeat center left 11px;
+}
+
+#hunger {
+	background: rgba(0,0,0,0.5) url("images/hunger.png") no-repeat center left 11px;
+}
+
+#thirst {
+	background: rgba(0,0,0,0.5) url("images/thirst.png") no-repeat center left 11px;
+}
+
+#azul {
+	background: rgba(0,0,0,0.5) url("images/ring.png") no-repeat center left 11px;
+}
+
+#amarelo {
+	background: rgba(0,0,0,0.5) url("images/important.png") no-repeat center left 11px;
+}
+
+#locked {
+	background: rgba(0,0,0,0.5) url("images/locked.png") no-repeat center left 11px;
+}
+
+#unlocked {
+	background: rgba(0,0,0,0.5) url("images/unlocked.png") no-repeat center left 11px;
+}
+
+#default {
+	padding: 15px 20px !important;
+	line-height: 20px !important;
+	background: rgba(0,0,0,0.5);
+}
+
+#default line {
+	text-shadow: 0 0 transparent !important;
+	color: rgba(255,255,255,0.1);
+}

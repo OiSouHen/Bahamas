@@ -1,0 +1,52 @@
+body{
+    display: none;
+}
+
+.notepad {
+	position: absolute;
+	right: 500px;
+	bottom: 50px;
+
+	width: 380px;
+	height: 540px;
+
+	background-image: url("background.png");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+.notepad textarea {
+	font-family: 'Gloria Hallelujah', cursive;
+	resize: none;
+	outline: none;
+	background: none;
+	border: none;
+	margin-left: 60px;
+	margin-top: 40px;
+	line-height: 17px;
+	height: 420px;
+	width: 300px;
+}
+
+::-webkit-scrollbar {
+	width: 3px;
+}
+
+::-webkit-scrollbar-track {
+	background: none;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgba(88,88,88,0.5);
+	border-radius: 10px;
+}
+
+.notepad button {
+	margin-left: 70px;
+	margin-top: 15px;
+	padding: 10px;
+	color: #fff;
+	border-radius: 4px;
+	background: #e33000;
+	border: 0;
+}

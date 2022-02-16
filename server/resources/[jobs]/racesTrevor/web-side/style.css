@@ -1,0 +1,36 @@
+html,body {
+	margin: 0;
+	padding: 0;
+	font-size: 12px;
+	overflow: hidden;
+	background: transparent;
+	font-family: "Roboto",Arial,Helvetica,sans-serif;
+}
+
+* {
+	overflow: hidden;
+	user-select: none;
+	box-sizing: border-box;
+}
+
+#displayRunners2 {
+	right: 64px;
+	bottom: 190px;
+	display: none;
+	color: #939393;
+	line-height: 30px;
+	text-align: right;
+	letter-spacing: 2px;
+	text-shadow: 1px 1px #000;
+	position: absolute !important;
+}
+
+#displayRunners2 s {
+	width: 120px;
+	float: right;
+	color: #e5e5e5;
+	font-size: 20px;
+	text-align: right;
+	text-decoration: none;
+	font-family: "Jura",sans-serif;
+}
