@@ -139,15 +139,10 @@ end)
 function cRP.updateRaces(status)
 	Races = status
 
-	for k,v in pairs(Races) do
-		blip = AddBlipForCoord(v["init"][1],v["init"][2],v["init"][3])
-		SetBlipSprite(blip,38)
-		SetBlipScale(blip,0.5)
-		SetBlipColour(blip,13)
-		SetBlipAsShortRange(blip,true)
-		BeginTextCommandSetBlipName("STRING")
-		AddTextComponentString("Circuitos")
-		EndTextCommandSetBlipName(blip)
+	for _,v in pairs(Races) do
+		local blip = AddBlipForRadius(v["init"][1],v["init"][2],v["init"][3],10.0)
+		SetBlipAlpha(blip,200)
+		SetBlipColour(blip,59)
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
