@@ -1,0 +1,1540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CVehicleModelInfoVariation>
+	<variationData>
+		<Item>
+			<modelName>fordraptor</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">111 3 3 3</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Police guv plate</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="240"/>
+		</Item>
+		<Item>
+			<modelName>audia4</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">111 3 3 3</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Police guv plate</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="240"/>
+		</Item>
+		<Item>
+			<modelName>ducati1200</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">111 3 3 3</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_bike_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Police guv plate</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="241"/>
+		</Item>
+		<Item>
+			<modelName>audiq8</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">111 3 3 3</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Police guv plate</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="240"/>
+		</Item>
+		<Item>
+			<modelName>audirs5</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">111 3 3 3</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Police guv plate</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="240"/>
+		</Item>
+		<Item>
+			<modelName>audirs6avant</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">111 3 3 3</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Police guv plate</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="240"/>
+		</Item>
+		<Item>
+			<modelName>audirs62</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">111 3 3 3</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Police guv plate</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="240"/>
+		</Item>
+		<Item>
+			<modelName>audia3</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">111 3 3 3</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Police guv plate</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="240"/>
+		</Item>
+		<Item>
+			<modelName>tahoe</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">111 3 3 3</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Police guv plate</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="240"/>
+		</Item>
+		<Item>
+			<modelName>r1</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>r1_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>r6</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>r6_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>s1000rr</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_bike_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>lancerevolution9</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>lancerevolution9_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>mercedesamg63</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>dodgechargerrt69</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>dodgechargerrt69_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>nissangtr50</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>astonmartindbs</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>ferrarif40</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>wheelchair</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>shelbygt500</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>bmwm1wb</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>lamborghinihuracanlw</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>panameramansory</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>bloodline</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>urbandevil</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="0"/>
+		</Item>
+		<Item>
+			<modelName>maverick2</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>hash_collision_1597748230</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities />
+			<lightSettings value="18" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>ambulance</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Police guv plate</Name>
+						<Value value="100"/>
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200"/>
+			<sirenSettings value="242"/>
+		</Item>
+		<Item>
+			<modelName>nissangtr</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>nissangtr_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>nissangtr2</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>nissangtr2_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>dodgechargersrt</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>dodgechargersrt_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>fordmustang</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>fordmustang_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>skyliner34</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>skyliner34_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>skyliner342</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>skyliner342_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>audirs6</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>lamborghinihuracan</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>mazdarx7</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>mazdarx7_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>mazdarx72</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>mazdarx72_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>nissangtrnismo</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>nissangtrnismo_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>bmwm4gts</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>bmwm4gts_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>bmwm5e34</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>bmwm5e34_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>lancerevolutionx</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>lancerevolutionx_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>civictyper</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>civictyper_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>toyotasupra</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>toyotasupra_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>mercedesgt63</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>mercedesgt63_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>ferrarif12</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>ferrarif12_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>ferrariitalia</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>ferrariitalia_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>bmwi8</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>bmwi8_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>mclarenp1</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>mclarensenna</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>ferrari812</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>subaruimpreza</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>subaruimpreza_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>mustangfast</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>mustangfast_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>acuransx</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>acuransx_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>golfgti</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>golfmk7</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>golfmk7_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>subarubrz</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>escaladegt900</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>escalade2021</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>nissangtr3</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>nissangtr3_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>hachura</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>hachura_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>dodgecharger1970</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>jeepcherokee</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>jeepcherokee_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>porsche911</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>porsche911_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>350z</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>350z_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>toyotasupra2</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>toyotasupra2_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>amarok</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+		<Item>
+			<modelName>bmwg20</modelName>
+			<colors>
+				<Item>
+					<indices content="char_array">2 2 2 2</indices>
+					<liveries />
+				</Item>
+			</colors>
+			<kits>
+				<Item>0_default_modkit</Item>
+			</kits>
+			<windowsWithExposedEdges />
+			<plateProbabilities>
+				<Probabilities>
+					<Item>
+						<Name>Standard White</Name>
+						<Value value="100" />
+					</Item>
+				</Probabilities>
+			</plateProbabilities>
+			<lightSettings value="1200" />
+			<sirenSettings value="0" />
+		</Item>
+	</variationData>
+</CVehicleModelInfoVariation>
