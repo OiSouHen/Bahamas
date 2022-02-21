@@ -1,7 +1,7 @@
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
-local timeDeath = 1200
+local timeDeath = 5
 local treatment = false
 local deathStatus = false
 local invencibleCount = 0
@@ -60,7 +60,7 @@ Citizen.CreateThread(function()
 			local ped = PlayerPedId()
 			if GetEntityHealth(ped) <= 101 then
 				if not deathStatus then
-					timeDeath = 1200
+					timeDeath = 5
 					deathStatus = true
 					emergencyButton = false
 
@@ -79,13 +79,13 @@ Citizen.CreateThread(function()
 					TriggerEvent("radio:outServers")
 					TriggerEvent("pma-voice:toggleMute")
 					TriggerServerEvent("inventory:Cancel")
-					exports["smartphone"]:closeSmartphone()
+					-- exports["smartphone"]:closeSmartphone()
 				else
 					timeDistance = 1
 					SetEntityHealth(ped,101)
 
 					if timeDeath <= 0 then
-						timeDeath = 1200
+						timeDeath = 5
 						deathStatus = false
 
 						ClearPedTasks(ped)
@@ -155,7 +155,7 @@ function tvRP.revivePlayer(health)
 	SetEntityInvincible(PlayerPedId(),false)
 
 	if deathStatus then
-		timeDeath = 1200
+		timeDeath = 5
 		deathStatus = false
 
 		ClearPedTasks(PlayerPedId())

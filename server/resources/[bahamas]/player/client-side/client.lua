@@ -131,6 +131,10 @@ end)
 -- BLOCKS
 -----------------------------------------------------------------------------------------------------------------------------------------
 function blocks()
+	if exports["player"]:handCuff() then
+		return false
+	end
+
 	return blockCommands
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -891,36 +895,36 @@ end
 -- TRUNKABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
 local inTrunk = false
-local trunkPlate = ""
+local playerInvisible = false
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- PLAYER:PLAYERINVISIBLE
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterNetEvent("player:playerInvisible")
+AddEventHandler("player:playerInvisible",function(status)
+	playerInvisible = status
+end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PLAYER:ENTERTRUNK
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("player:enterTrunk")
-AddEventHandler("player:enterTrunk",function()
-	local ped = PlayerPedId()
-
-	if not IsPedInAnyVehicle(ped) then
-		if not inTrunk then
-			local vehicle,vehNet,vehPlate = vRP.vehList(10)
-			if DoesEntityExist(vehicle) and GetVehicleDoorsLockedForPlayer(vehicle,PlayerId()) ~= 1 then
-				local trunk = GetEntityBoneIndexByName(vehicle,"boot")
-				local speed = GetEntitySpeed(vehicle) * 3.6
-				if trunk ~= -1 and speed <= 3 then
-					local coords = GetEntityCoords(ped)
+AddEventHandler("player:enterTrunk",function(entity)
+	if not inTrunk then
+		local vehicle = entity[3]
+		local vehPlate = entity[1]
+		if GetVehicleDoorLockStatus(vehicle) == 1 then
+			local trunk = GetEntityBoneIndexByName(vehicle,"boot")
+			if trunk ~= -1 then
+				if GetVehicleDoorAngleRatio(vehicle,5) < 0.9 then
+					local ped = PlayerPedId()
+					local coords = GetOffsetFromEntityInWorldCoords(ped,0.0,0.5,0.0)
 					local coordsEnt = GetWorldPositionOfEntityBone(vehicle,trunk)
 					local distance = #(coords - coordsEnt)
-					if distance <= 3.0 then
-						if GetVehicleDoorAngleRatio(vehicle,5) < 0.9 and GetVehicleDoorsLockedForPlayer(vehicle,PlayerId()) ~= 1 then
-							trunkPlate = vehPlate
-							SetCarBootOpen(vehicle)
-							SetEntityVisible(ped,false,false)
-							Citizen.Wait(750)
-							AttachEntityToEntity(ped,vehicle,-1,0.0,-2.2,0.5,0.0,0.0,0.0,false,false,false,false,20,true)
-							Citizen.Wait(500)
-							SetVehicleDoorShut(vehicle,5)
-							blockCommands = true
-							inTrunk = true
-						end
+					if distance <= 2.0 then
+						playerInvisible = true
+						blockCommands = true
+						SetEntityVisible(ped,false,false)
+						AttachEntityToEntity(ped,vehicle,-1,0.0,-2.2,0.5,0.0,0.0,0.0,false,false,false,false,20,true)
+						inTrunk = true
 					end
 				end
 			end
@@ -936,15 +940,12 @@ AddEventHandler("player:checkTrunk",function()
 		local ped = PlayerPedId()
 		local vehicle = GetEntityAttachedTo(ped)
 		if DoesEntityExist(vehicle) then
-			SetCarBootOpen(vehicle)
-			Citizen.Wait(750)
 			inTrunk = false
-			blockCommands = false
 			DetachEntity(ped,false,false)
 			SetEntityVisible(ped,true,false)
-			SetEntityCoords(ped,GetOffsetFromEntityInWorldCoords(ped,0.0,-1.5,-0.25),1,0,0,0)
-			Citizen.Wait(500)
-			SetVehicleDoorShut(vehicle,5)
+			blockCommands = false
+			playerInvisible = false
+			SetEntityCoords(ped,GetOffsetFromEntityInWorldCoords(ped,0.0,-1.25,-0.25),1,0,0,0)
 		end
 	end
 end)
@@ -964,26 +965,25 @@ Citizen.CreateThread(function()
 				DisablePlayerFiring(ped,true)
 
 				if IsEntityVisible(ped) then
+					playerInvisible = true
 					SetEntityVisible(ped,false,false)
 				end
 
 				if IsControlJustPressed(1,38) then
-					SetCarBootOpen(vehicle)
-					Citizen.Wait(750)
 					inTrunk = false
-					blockCommands = false
 					DetachEntity(ped,false,false)
 					SetEntityVisible(ped,true,false)
-					SetEntityCoords(ped,GetOffsetFromEntityInWorldCoords(ped,0.0,-1.5,-0.25),1,0,0,0)
-					Citizen.Wait(500)
-					SetVehicleDoorShut(vehicle,5)
+					blockCommands = false
+					playerInvisible = false
+					SetEntityCoords(ped,GetOffsetFromEntityInWorldCoords(ped,0.0,-1.25,-0.25),1,0,0,0)
 				end
 			else
 				inTrunk = false
-				blockCommands = false
 				DetachEntity(ped,false,false)
 				SetEntityVisible(ped,true,false)
-				SetEntityCoords(ped,GetOffsetFromEntityInWorldCoords(ped,0.0,-1.5,-0.25),1,0,0,0)
+				blockCommands = false
+				playerInvisible = false
+				SetEntityCoords(ped,GetOffsetFromEntityInWorldCoords(ped,0.0,-1.25,-0.25),1,0,0,0)
 			end
 		end
 

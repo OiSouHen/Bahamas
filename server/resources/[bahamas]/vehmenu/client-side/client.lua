@@ -69,9 +69,7 @@ RegisterNUICallback("menuActive",function(data)
 			TriggerServerEvent("vehmenu:doors","5")
 		elseif data["active"] == "hood" then
 			TriggerServerEvent("vehmenu:doors","6")
-		elseif data["active"] == "trunkin" then
-			TriggerEvent("player:enterTrunk")
-
+			
 			SendNUIMessage({ show = false })
 			SetCursorLocation(0.5,0.5)
 			SetNuiFocus(false,false)

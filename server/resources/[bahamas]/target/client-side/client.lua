@@ -11,7 +11,6 @@ local Zones = {}
 local Models = {}
 local success = false
 local innerEntity = {}
-local dismantleList = {}
 local setDistance = 10.0
 local playerActive = false
 local targetActive = false
@@ -542,33 +541,27 @@ local paramedicMenu = {
 		event = "paramedic:reanimar",
 		label = "Reanimar",
 		tunnel = "paramedic"
-	},
-	{
+	},{
 		event = "paramedic:diagnostico",
 		label = "Diagnóstico",
 		tunnel = "paramedic"
-	},
-	{
+	},{
 		event = "paramedic:tratamento",
 		label = "Tratamento",
 		tunnel = "paramedic"
-	},
-	{
+	},{
 		event = "paramedic:sangramento",
 		label = "Sangramento",
 		tunnel = "paramedic"
-	},
-	{
+	},{
 		event = "paramedic:maca",
 		label = "Deitar Paciente",
 		tunnel = "paramedic"
-	},
-	{
+	},{
 		event = "paramedic:presetBurn",
 		label = "Roupa de Queimadura",
 		tunnel = "paramedic"
-	},
-	{
+	},{
 		event = "paramedic:presetPlaster",
 		label = "Roupa de Gesso",
 		tunnel = "paramedic"
@@ -582,16 +575,28 @@ local policeVeh = {
 		event = "police:runPlate",
 		label = "Verificar Placa",
 		tunnel = "police"
-	},
-	{
+	},{
 		event = "police:impound",
 		label = "Registrar Veículo",
 		tunnel = "police"
-	},
-	{
+	},{
 		event = "police:runArrest",
 		label = "Detenção do Veículo",
 		tunnel = "police"
+	},{
+		event = "player:enterTrunk",
+		label = "Entrar no Porta-Malas",
+		tunnel = "client"
+	}
+}
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- PLAYERVEH
+-----------------------------------------------------------------------------------------------------------------------------------------
+local playerVeh = {
+	{
+		event = "player:enterTrunk",
+		label = "Entrar no Porta-Malas",
+		tunnel = "client"
 	}
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -602,8 +607,7 @@ local policePed = {
 		event = "police:runInspect",
 		label = "Revistar",
 		tunnel = "police"
-	},
-	{
+	},{
 		event = "police:prisonClothes",
 		label = "Uniforme do Presídio",
 		tunnel = "police"
@@ -617,8 +621,7 @@ local adminMenu = {
 		event = "tryDeleteObject",
 		label = "Deletar Objeto",
 		tunnel = "admin"
-	},
-	{
+	},{
 		event = "garages:deleteVehicle",
 		label = "Deletar Veículo",
 		tunnel = "admin"
@@ -629,6 +632,7 @@ local adminMenu = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 function playerTargetEnable()
 	if playerActive then
+	
 		if exports["inventory"]:blockInvents() or exports["player"]:blockCommands() or exports["player"]:handCuff() or success or IsPedArmed(PlayerPedId(),6) or IsPedInAnyVehicle(PlayerPedId()) then
 			return
 		end
@@ -657,7 +661,7 @@ function playerTargetEnable()
 									Citizen.Wait(1)
 								end
 
-								local netObjects = NetworkGetNetworkIdFromEntity(entity)
+								local netObjects = ObjToNet(entity)
 								SetNetworkIdCanMigrate(netObjects,true)
 								NetworkSetNetworkIdDynamic(netObjects,false)
 								SetNetworkIdExistsOnAllMachines(netObjects,true)
@@ -692,12 +696,28 @@ function playerTargetEnable()
 								SendNUIMessage({ response = "leftTarget" })
 							end
 						end
-					elseif IsEntityAVehicle(entity) and policeService then
+					elseif IsEntityAVehicle(entity) then
 						if #(coords - entCoords) <= 1.0 then
 							success = true
 
-							innerEntity = { GetVehicleNumberPlateText(entity),vRP.vehicleModel(GetEntityModel(entity)) }
-							SendNUIMessage({ response = "validTarget", data = policeVeh })
+							innerEntity = { GetVehicleNumberPlateText(entity),vRP.vehicleModel(GetEntityModel(entity)),entity,VehToNet(entity) }
+
+							if policeService then
+								SendNUIMessage({ response = "validTarget", data = policeVeh })
+							else
+								local distance = #(coords - vector3(-85.3,-2223.71,7.8))
+								if distance > 20 then
+									local varMenu = playerVeh
+
+									if GetEntityModel(entity) == 1747439474 then
+										varMenu = stockadeVeh
+									end
+
+									SendNUIMessage({ response = "validTarget", data = varMenu })
+								else
+									SendNUIMessage({ response = "validTarget", data = dismantleVeh })
+								end
+							end
 
 							while success and targetActive do
 								local ped = PlayerPedId()
@@ -785,33 +805,33 @@ function playerTargetEnable()
 							if DoesEntityExist(entity) then
 								if k == GetEntityModel(entity) then
 									if #(coords - entCoords) <= Models[k]["distance"] then
-
-										if Models[k]["desmanche"] then
-											local distance = #(coords - vector3(602.39,-437.2,24.75))
-											if distance > 25 then
-												goto scapeModel
-											end
-										end
-
 										success = true
 
-										NetworkRegisterEntityAsNetworked(entity)
-										while not NetworkGetEntityIsNetworked(entity) do
-											NetworkRegisterEntityAsNetworked(entity)
-											Citizen.Wait(1)
+										if GetPedType(entity) == 28 then
+											innerEntity = { entity,k,nil,GetEntityCoords(entity) }
+										else
+											local netObjects = nil
+											if k ~= 1281992692 and k ~= 1158960338 and k ~= 1511539537 then
+												NetworkRegisterEntityAsNetworked(entity)
+												while not NetworkGetEntityIsNetworked(entity) do
+													NetworkRegisterEntityAsNetworked(entity)
+													Citizen.Wait(1)
+												end
+
+												while not NetworkHasControlOfEntity(entity) do
+													NetworkRequestControlOfEntity(entity)
+													Citizen.Wait(1)
+												end
+
+												netObjects = ObjToNet(entity)
+												SetNetworkIdCanMigrate(netObjects,true)
+												NetworkSetNetworkIdDynamic(netObjects,false)
+												SetNetworkIdExistsOnAllMachines(netObjects,true)
+											end
+
+											innerEntity = { entity,k,netObjects,GetEntityCoords(entity) }
 										end
 
-										while not NetworkHasControlOfEntity(entity) do
-											NetworkRequestControlOfEntity(entity)
-											Citizen.Wait(1)
-										end
-
-										local netObjects = NetworkGetNetworkIdFromEntity(entity)
-										SetNetworkIdCanMigrate(netObjects,true)
-										NetworkSetNetworkIdDynamic(netObjects,false)
-										SetNetworkIdExistsOnAllMachines(netObjects,true)
-
-										innerEntity = { entity,k,netObjects,GetEntityCoords(entity) }
 										SendNUIMessage({ response = "validTarget", data = Models[k]["options"] })
 
 										while success and targetActive do
@@ -838,8 +858,6 @@ function playerTargetEnable()
 								end
 							end
 						end
-
-						::scapeModel::
 					end
 				end
 
@@ -930,46 +948,6 @@ AddEventHandler("target:pacienteDeitar",function()
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
--- TARGET:DISMANTLELIST
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterNetEvent("target:dismantleList")
-AddEventHandler("target:dismantleList",function(tableList)
-	RemoveTargetModel(dismantleList)
-
-	AddTargetModel(tableList,{
-		options = {
-			{
-				event = "dismantle:checkVehicle",
-				label = "Desmanchar",
-				tunnel = "client"
-			}
-		},
-		distance = 0.75,
-		desmanche = true
-	})
-
-	dismantleList = tableList
-end)
------------------------------------------------------------------------------------------------------------------------------------------
--- TARGET:DISMANTLELIST
------------------------------------------------------------------------------------------------------------------------------------------
-RegisterNetEvent("target:dismantleClear")
-AddEventHandler("target:dismantleClear",function(model)
-	if Models[model] then
-		Models[model] = nil
-	end
-end)
------------------------------------------------------------------------------------------------------------------------------------------
--- REMOVETARGETMODEL
------------------------------------------------------------------------------------------------------------------------------------------
-function RemoveTargetModel(models)
-	for k,v in pairs(models) do
-		if Models[v] then
-			Models[v] = nil
-		end
-	end
-end
------------------------------------------------------------------------------------------------------------------------------------------
 -- TARGET:SENTAR
 -----------------------------------------------------------------------------------------------------------------------------------------
 local chairs = {
@@ -1003,7 +981,8 @@ local chairs = {
 	[-377849416] = 0.5,
 	[96868307] = 0.5,
 	[-1195678770] = 0.7,
-	[-606800174] = 0.5
+	[-853526657] = -0.1,
+	[652816835] = 0.8
 }
 
 RegisterNetEvent("target:animSentar")
@@ -1126,11 +1105,12 @@ function AddCircleZone(name,center,radius,options,targetoptions)
 	Zones[name]["targetoptions"] = targetoptions
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
--- ADDBOXZONE
+-- REMCIRCLEZONE
 -----------------------------------------------------------------------------------------------------------------------------------------
-function AddBoxZone(name,center,length,width,options,targetoptions)
-	Zones[name] = BoxZone:Create(center,length,width,options)
-	Zones[name]["targetoptions"] = targetoptions
+function RemCircleZone(name)
+	if Zones[name] then
+		Zones[name] = nil
+	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ADDPOLYZONE
@@ -1148,9 +1128,18 @@ function AddTargetModel(models,parameteres)
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- LABELTEXT
+-----------------------------------------------------------------------------------------------------------------------------------------
+function LabelText(Name,Title)
+	if Zones[Name] then
+		Zones[Name]["targetoptions"]["options"][1]["label"] = Title
+	end
+end
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- EXPORTS
 -----------------------------------------------------------------------------------------------------------------------------------------
-exports("AddBoxZone",AddBoxZone)
-exports("AddPolyzone",AddPolyzone)
+exports("LabelText",LabelText)
 exports("AddCircleZone",AddCircleZone)
+exports("RemCircleZone",RemCircleZone)
+exports("AddPolyzone",AddPolyzone)
 exports("AddTargetModel",AddTargetModel)

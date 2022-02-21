@@ -16,11 +16,13 @@ body {
 }
 
 .target {
+	color: #fff;
 	width: 100vw;
 	height: 100vh;
 	display: none;
 	align-items: center;
 	justify-content: center;
+	text-shadow: 1px 1px rgba(0,0,0,0.25);
 }
 
 .target-wrapper {
@@ -48,6 +50,19 @@ body {
 	list-style: none;
 	user-select: none;
 	white-space: nowrap;
-	text-transform: uppercase;
-	font-family: "Roboto",Arial,Helvetica,sans-serif;
+	font-family: "Roboto";
+}
+
+.target-label div {
+	color: #ccc;
+	display: table;
+	margin: 0 0 5px;
+	border-radius: 3px;
+	padding: 10px 15px 10px 15px;
+	background: rgba(15,15,15,.75);
+}
+
+.target-label div:hover {
+	color: #a0ceb6;
+	background: #2e6e4c;
 }

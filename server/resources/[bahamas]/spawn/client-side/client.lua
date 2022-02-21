@@ -42,6 +42,7 @@ AddEventHandler("spawn:generateJoin",function()
 	SetCamActive(characterCamera,true)
 	RenderScriptCams(true,false,1,true,true)
 	SendNUIMessage({ action = "openSystem" })
+	TriggerEvent("player:playerInvisible",true)
 	SetEntityVisible(ped,false,false)
 	SetNuiFocus(true,true)
 
@@ -86,8 +87,8 @@ AddEventHandler("spawn:justSpawn",function(status,spawnType)
 	characterCamera = nil
 
 	if spawnType then
+		TriggerEvent("player:playerInvisible",true)
 		SetEntityVisible(ped,false,false)
-		SetEntityInvincible(ped,true)
 
 		local numberLine = 0
 		for k,v in pairs(status) do
@@ -120,9 +121,9 @@ AddEventHandler("spawn:justSpawn",function(status,spawnType)
 
 		DoScreenFadeIn(1000)
 	else
+		TriggerEvent("player:playerInvisible",false)
 		SetEntityVisible(ped,true,false)
 		TriggerEvent("hudActived",true)
-		SetEntityInvincible(ped,false)
 		SetNuiFocus(false,false)
 		brokenCamera = false
 
@@ -150,11 +151,11 @@ RegisterNUICallback("spawnChosen",function(data)
 		TriggerEvent("hudActived",true)
 		SetNuiFocus(false,false)
 
+		TriggerEvent("player:playerInvisible",false)
 		RenderScriptCams(false,false,0,true,true)
 		SetCamActive(characterCamera,false)
 		DestroyCam(characterCamera,true)
 		SetEntityVisible(ped,true,false)
-		SetEntityInvincible(ped,false)
 		characterCamera = nil
 		brokenCamera = false
 

@@ -44,6 +44,82 @@ RegisterCommand("god",function(source,args,rawCommand)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- HEALTH
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("health",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRP.hasGroup(user_id,"Suporte") then
+			if args[1] then
+				local nuser_id = parseInt(args[1])
+				local otherPlayer = vRP.userSource(nuser_id)
+				if otherPlayer then
+					vRPC.revivePlayer(otherPlayer,200)
+					TriggerClientEvent("resetBleeding",source)
+					TriggerClientEvent("resetDiagnostic",source)
+				end
+			else
+				vRPC.revivePlayer(source,200)
+				TriggerClientEvent("resetHandcuff",source)
+				TriggerClientEvent("resetBleeding",source)
+				TriggerClientEvent("resetDiagnostic",source)
+			end
+		end
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ARMOUR
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("armour",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRP.hasGroup(user_id,"Suporte") then
+			if args[1] then
+				local nuser_id = parseInt(args[1])
+				local otherPlayer = vRP.userSource(nuser_id)
+				if otherPlayer then
+					vRPC.setArmour(otherPlayer,100)
+					TriggerClientEvent("resetBleeding",source)
+					TriggerClientEvent("resetDiagnostic",source)
+				end
+			else
+				vRPC.setArmour(otherPlayer,100)
+				TriggerClientEvent("resetHandcuff",source)
+				TriggerClientEvent("resetBleeding",source)
+				TriggerClientEvent("resetDiagnostic",source)
+			end
+		end
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- GOOD
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("good",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRP.hasGroup(user_id,"Suporte") then
+			if args[1] then
+				local nuser_id = parseInt(args[1])
+				local otherPlayer = vRP.userSource(nuser_id)
+				if otherPlayer then
+					vRP.upgradeThirst(nuser_id,100)
+					vRP.upgradeHunger(nuser_id,100)
+					vRP.downgradeStress(nuser_id,100)
+					TriggerClientEvent("resetBleeding",source)
+					TriggerClientEvent("resetDiagnostic",source)
+				end
+			else
+				vRP.upgradeThirst(user_id,100)
+				vRP.upgradeHunger(user_id,100)
+				vRP.downgradeStress(user_id,100)
+				TriggerClientEvent("resetHandcuff",source)
+				TriggerClientEvent("resetBleeding",source)
+				TriggerClientEvent("resetDiagnostic",source)
+			end
+		end
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- ITEM
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterCommand("item",function(source,args,rawCommand)
@@ -55,6 +131,37 @@ RegisterCommand("item",function(source,args,rawCommand)
 			end
 		end
 	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- GEMSTONE
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("gemstone",function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if user_id and parseInt(args[1]) > 0 and parseInt(args[2]) > 0 then
+        if vRP.hasGroup(user_id,"Moderador") then
+            local nuser_id = parseInt(args[1])
+			local gems = parseInt(args[2])
+            local identity = vRP.userIdentity(nuser_id)
+            if identity then
+                vRP.execute("accounts/infosUpdategems",{ steam = identity["steam"], gems = gems })
+				TriggerClientEvent("Notify",source,"verde","Adicionado <b>"..parseInt(args[2]).." Gemas</b> ao passaporte <b>"..args[1].."</b>.",5000)
+            end
+        end
+    end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- ADDBANK
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("addbank",function(source,args,rawCommand)
+    local user_id = vRP.getUserId(source)
+    if user_id and parseInt(args[1]) > 0 and parseInt(args[2]) > 0 then
+        if vRP.hasGroup(user_id,"Moderador")then
+            local nuser_id = parseInt(args[1])
+			local bank = parseInt(args[2])
+			vRP.execute("characters/addBank",{ id = nuser_id, bank = bank })
+			TriggerClientEvent("Notify",source,"verde","Adicionado <b>"..parseInt(args[2]).." Dólares</b> ao passaporte <b>"..args[1].."</b>.",5000)
+        end
+    end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- PRIORITY
@@ -183,10 +290,10 @@ end)
 RegisterCommand("group",function(source,args,rawCommand)
 	local user_id = vRP.getUserId(source)
 	if user_id then
-		if vRP.hasGroup(user_id,"Moderador") and parseInt(args[1]) > 0 and args[2] then
+	--	if vRP.hasGroup(user_id,"Moderador") and parseInt(args[1]) > 0 and args[2] then -- Need remove to set the First server owner rank
 			TriggerClientEvent("Notify",source,"verde","Adicionado <b>"..args[2].."</b> ao passaporte <b>"..args[1].."</b>.",5000)
 			vRP.setPermission(args[1],args[2])
-		end
+	--	end -- Need remove to set the First server owner rank
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -350,6 +457,32 @@ RegisterCommand("announce",function(source,args,rawCommand)
 			end
 
 			TriggerClientEvent("smartphone:createSMS",-1,"Governador",message)
+		end
+	end
+end)
+-----------------------------------------------------------------------------------------------------------------------------------------
+-- NOTIFYANNOUNCE
+-----------------------------------------------------------------------------------------------------------------------------------------
+RegisterCommand("notifyannounce",function(source,args,rawCommand)
+	local user_id = vRP.getUserId(source)
+	if user_id then
+		if vRP.hasGroup(user_id,"Moderador") then
+			local category = vRP.prompt(source,"Categoria:","")
+			if category == "" then
+				return
+			end
+			
+			local message = vRP.prompt(source,"Mensagem:","")
+			if message == "" then
+				return
+			end
+			
+			local timer = vRP.prompt(source,"Tempo:","")
+			if timer == "" then
+				return
+			end
+
+			TriggerClientEvent("Notify",-1,category,message,timer)
 		end
 	end
 end)
