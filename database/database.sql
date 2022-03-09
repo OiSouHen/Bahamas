@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS `summerz`;
-USE `summerz`;
+CREATE DATABASE IF NOT EXISTS `bahamas`;
+USE `bahamas`;
 
 DROP TABLE IF EXISTS `summerz_accounts`;
 CREATE TABLE `summerz_accounts` (
