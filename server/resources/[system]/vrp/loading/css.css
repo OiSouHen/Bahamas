@@ -1,0 +1,18 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: Arial;
+	font-size: 17px;
+}
+
+video {
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	object-fit: cover;
+}
