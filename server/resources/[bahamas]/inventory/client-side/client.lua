@@ -151,6 +151,8 @@ AddEventHandler("inventory:verifyWeapon",function(nameItem,splitName)
 			RemoveAllPedWeapons(ped,true)
 		end
 	end
+	
+	RemoveAllPedWeapons(ped,true)
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- INVENTORY:PREVENTWEAPON
