@@ -1,7 +1,7 @@
 -------
 
 #### Bahamas
-> Connections: ghmattimysql, ghmattimysqljs.
+> Connections: oxmysql, oxdrive.
 
 > DLC: The Cayo Perico Heist.
 
@@ -10,6 +10,6 @@
 -------
 
 #### Crensa
-Você pode entrar em nosso grupo e ter acesso a atualizações e diversos canais informantes sobre a Base - [Discord](https://discord.gg/9hevnqj6th).
+Você pode entrar em nosso grupo e ter acesso a atualizações e diversos canais informantes sobre a Base - [Discord](https://discord.gg/5BVWp7Zxpe).
 
 -------
