@@ -6481,11 +6481,20 @@
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.ADD_BLIP_FOR_ENTITY">
             <summary>
-            Returns red ( default ) blip attached to entity.
-            Example:
-            Blip blip; //Put this outside your case or option
-            blip = HUD::ADD_BLIP_FOR_ENTITY(YourPedOrBodyguardName);
-            HUD::SET_BLIP_AS_FRIENDLY(blip, true);
+            Create a blip that for default is red (enemy), you can use the [SET_BLIP_AS_FRIENDLY](#\_0xC6F43D0E) to make it blue (friend)
+            
+            Example of enemy:
+            ![enemy](https://i.imgur.com/fl78svv.png)
+            Example of friend:
+            ![friend](https://i.imgur.com/Q16ho5d.png)
+            </summary>
+        </member>
+        <member name="F:CitizenFX.Core.Native.Hash.ADD_BLIP_FOR_RADIUS">
+            <summary>
+            Create a blip with a radius for the specified coordinates (it doesnt create the blip sprite, so you need to use [AddBlipCoords](#\_0xC6F43D0E))
+            
+            Example image:
+            ![example](https://i.imgur.com/9hQl3DB.png)
             </summary>
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.ADD_PED_DECORATION_FROM_HASHES">
@@ -6571,9 +6580,14 @@
             gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
             </summary>
         </member>
+        <member name="F:CitizenFX.Core.Native.Hash.CLEAR_PED_TASKS">
+            <summary>
+            Clear a ped's tasks. Stop animations and other tasks created by scripts.
+            </summary>
+        </member>
         <member name="F:CitizenFX.Core.Native.Hash.CLEAR_PED_TASKS_IMMEDIATELY">
             <summary>
-            Immediately stops the pedestrian from whatever it's doing. They stop fighting, animations, etc. they forget what they were doing.
+            Immediately stops the pedestrian from whatever it's doing. The difference between this and [CLEAR_PED_TASKS](#\_0xE1EF3C1216AFF2CD) is that this one teleports the ped but does not change the position of the ped.
             </summary>
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.CLEAR_PLAYER_WANTED_LEVEL">
@@ -7137,25 +7151,7 @@
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.REMOVE_BLIP">
             <summary>
-            In the C++ SDK, this seems not to work-- the blip isn't removed immediately. I use it for saving cars.
-            E.g.:
-            Ped pped = PLAYER::PLAYER_PED_ID();
-            Vehicle v = PED::GET_VEHICLE_PED_IS_USING(pped);
-            Blip b = HUD::ADD_BLIP_FOR_ENTITY(v);
-            works fine.
-            But later attempting to delete it with:
-            Blip b = HUD::GET_BLIP_FROM_ENTITY(v);
-            if (HUD::DOES_BLIP_EXIST(b)) HUD::REMOVE_BLIP(&amp;b);
-            doesn't work. And yes, doesn't work without the DOES_BLIP_EXIST check either. Also, if you attach multiple blips to the same thing (say, a vehicle), and that thing disappears, the blips randomly attach to other things (in my case, a vehicle).
-            Thus for me, HUD::REMOVE_BLIP(&amp;b) only works if there's one blip, (in my case) the vehicle is marked as no longer needed, you drive away from it and it eventually despawns, AND there is only one blip attached to it. I never intentionally attach multiple blips but if the user saves the car, this adds a blip. Then if they delete it, it is supposed to remove the blip, but it doesn't. Then they can immediately save it again, causing another blip to re-appear.
-            -------------
-            Passing the address of the variable instead of the value works for me.
-            e.g.
-            int blip = HUD::ADD_BLIP_FOR_ENTITY(ped);
-            HUD::REMOVE_BLIP(&amp;blip);
-            Remove blip will currently crash your game, just artificially remove the blip by setting the sprite to a id that is 'invisible'.
-            --
-            It crashes my game.
+            Removes the blip from your map.
             </summary>
         </member>
         <member name="F:CitizenFX.Core.Native.Hash.REMOVE_STATE_BAG_CHANGE_HANDLER">
@@ -8017,7 +8013,7 @@
         <member name="F:CitizenFX.Core.Native.Hash.TASK_ENTER_VEHICLE">
             <summary>
             speed 1.0 = walk, 2.0 = run  
-            p5 1 = normal, 3 = teleport to vehicle, 16 = teleport directly into vehicle  
+            p5 1 = normal, 3 = teleport to vehicle, 8 = normal/carjack ped from seat, 16 = teleport directly into vehicle  
             p6 is always 0
             </summary>
         </member>
@@ -8052,7 +8048,7 @@
             Flags from decompiled scripts:  
             0 = normal exit and closes door.  
             1 = normal exit and closes door.  
-            16 = teleports outside, door kept closed.  
+            16 = teleports outside, door kept closed.  (This flag does not seem to work for the front seats in buses, NPCs continue to exit normally)
             64 = normal exit and closes door, maybe a bit slower animation than 0.  
             256 = normal exit but does not close the door.  
             4160 = ped is throwing himself out, even when the vehicle is still.  
@@ -8299,12 +8295,40 @@
         </member>
         <member name="M:CitizenFX.Core.Native.API.AddBlipForEntity(System.Int32)">
             <summary>
-            Returns red ( default ) blip attached to entity.
-            Example:
-            Blip blip; //Put this outside your case or option
-            blip = HUD::ADD_BLIP_FOR_ENTITY(YourPedOrBodyguardName);
-            HUD::SET_BLIP_AS_FRIENDLY(blip, true);
+            Create a blip that for default is red (enemy), you can use the [SET_BLIP_AS_FRIENDLY](#\_0xC6F43D0E) to make it blue (friend)
+            Example of enemy:
+            ![enemy](https://i.imgur.com/fl78svv.png)
+            Example of friend:
+            ![friend](https://i.imgur.com/Q16ho5d.png)
             </summary>
+            <param name="entity">
+            The entity handle to create the blip.
+            </param>
+            <returns>
+            A blip handle.
+            </returns>
+        </member>
+        <member name="M:CitizenFX.Core.Native.API.AddBlipForRadius(System.Single,System.Single,System.Single,System.Single)">
+            <summary>
+            Create a blip with a radius for the specified coordinates (it doesnt create the blip sprite, so you need to use [AddBlipCoords](#\_0xC6F43D0E))
+            Example image:
+            ![example](https://i.imgur.com/9hQl3DB.png)
+            </summary>
+            <param name="posX">
+            The x position of the blip (you can also send a vector3 instead of the bulk coordinates)
+            </param>
+            <param name="posY">
+            The y position of the blip (you can also send a vector3 instead of the bulk coordinates)
+            </param>
+            <param name="posZ">
+            The z position of the blip (you can also send a vector3 instead of the bulk coordinates)
+            </param>
+            <param name="radius">
+            The number that defines the radius of the blip circle
+            </param>
+            <returns>
+            The blip handle that can be manipulated with every `SetBlip` natives
+            </returns>
         </member>
         <member name="M:CitizenFX.Core.Native.API.AddPedDecorationFromHashes(System.Int32,System.UInt32,System.UInt32)">
             <summary>
@@ -8442,10 +8466,21 @@
             gtaxscripting.blogspot.com/2016/04/gta-v-peds-component-and-props.html
             </summary>
         </member>
+        <member name="M:CitizenFX.Core.Native.API.ClearPedTasks(System.Int32)">
+            <summary>
+            Clear a ped's tasks. Stop animations and other tasks created by scripts.
+            </summary>
+            <param name="ped">
+            Ped id. Use PlayerPedId() for your own character.
+            </param>
+        </member>
         <member name="M:CitizenFX.Core.Native.API.ClearPedTasksImmediately(System.Int32)">
             <summary>
-            Immediately stops the pedestrian from whatever it's doing. They stop fighting, animations, etc. they forget what they were doing.
+            Immediately stops the pedestrian from whatever it's doing. The difference between this and [CLEAR_PED_TASKS](#\_0xE1EF3C1216AFF2CD) is that this one teleports the ped but does not change the position of the ped.
             </summary>
+            <param name="ped">
+            Ped id.
+            </param>
         </member>
         <member name="M:CitizenFX.Core.Native.API.ClearPlayerWantedLevel(System.String)">
             <summary>
@@ -8480,7 +8515,7 @@
             False to create a door archetype (archetype flag bit 26 set) as a door. Required to be set to true to create door models in network mode.
             </param>
             <returns>
-            A script handle (fwScriptGuid index) for the object, or `0` if the object failed to be created.
+            A script handle for the object, or `0` if the object failed to be created.
             </returns>
         </member>
         <member name="M:CitizenFX.Core.Native.API.CreateObjectNoOffset(System.UInt32,System.Single,System.Single,System.Single,System.Boolean,System.Boolean,System.Boolean)">
@@ -9495,26 +9530,11 @@
         </member>
         <member name="M:CitizenFX.Core.Native.API.RemoveBlip(System.Int32@)">
             <summary>
-            In the C++ SDK, this seems not to work-- the blip isn't removed immediately. I use it for saving cars.
-            E.g.:
-            Ped pped = PLAYER::PLAYER_PED_ID();
-            Vehicle v = PED::GET_VEHICLE_PED_IS_USING(pped);
-            Blip b = HUD::ADD_BLIP_FOR_ENTITY(v);
-            works fine.
-            But later attempting to delete it with:
-            Blip b = HUD::GET_BLIP_FROM_ENTITY(v);
-            if (HUD::DOES_BLIP_EXIST(b)) HUD::REMOVE_BLIP(&amp;b);
-            doesn't work. And yes, doesn't work without the DOES_BLIP_EXIST check either. Also, if you attach multiple blips to the same thing (say, a vehicle), and that thing disappears, the blips randomly attach to other things (in my case, a vehicle).
-            Thus for me, HUD::REMOVE_BLIP(&amp;b) only works if there's one blip, (in my case) the vehicle is marked as no longer needed, you drive away from it and it eventually despawns, AND there is only one blip attached to it. I never intentionally attach multiple blips but if the user saves the car, this adds a blip. Then if they delete it, it is supposed to remove the blip, but it doesn't. Then they can immediately save it again, causing another blip to re-appear.
-            -------------
-            Passing the address of the variable instead of the value works for me.
-            e.g.
-            int blip = HUD::ADD_BLIP_FOR_ENTITY(ped);
-            HUD::REMOVE_BLIP(&amp;blip);
-            Remove blip will currently crash your game, just artificially remove the blip by setting the sprite to a id that is 'invisible'.
-            --
-            It crashes my game.
+            Removes the blip from your map.
             </summary>
+            <param name="blip">
+            Blip handle to remove.
+            </param>
         </member>
         <member name="M:CitizenFX.Core.Native.API.RemoveStateBagChangeHandler(System.Int32)">
             <summary>
@@ -10616,7 +10636,7 @@
         <member name="M:CitizenFX.Core.Native.API.TaskEnterVehicle(System.Int32,System.Int32,System.Int32,System.Int32,System.Single,System.Int32,System.Int32)">
             <summary>
             speed 1.0 = walk, 2.0 = run
-            p5 1 = normal, 3 = teleport to vehicle, 16 = teleport directly into vehicle
+            p5 1 = normal, 3 = teleport to vehicle, 8 = normal/carjack ped from seat, 16 = teleport directly into vehicle
             p6 is always 0
             </summary>
             <param name="seatIndex">
@@ -10654,7 +10674,7 @@
             Flags from decompiled scripts:
             0 = normal exit and closes door.
             1 = normal exit and closes door.
-            16 = teleports outside, door kept closed.
+            16 = teleports outside, door kept closed.  (This flag does not seem to work for the front seats in buses, NPCs continue to exit normally)
             64 = normal exit and closes door, maybe a bit slower animation than 0.
             256 = normal exit but does not close the door.
             4160 = ped is throwing himself out, even when the vehicle is still.

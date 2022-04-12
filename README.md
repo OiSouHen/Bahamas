@@ -5,7 +5,7 @@
 
 > DLC: The Cayo Perico Heist.
 
-> Artifacts/Build: 5356.
+> Artifacts/Build: 5473.
 
 -------
 
