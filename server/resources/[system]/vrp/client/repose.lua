@@ -23,7 +23,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADREPOSE
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		if reposeStatus then
 			if GetGameTimer() >= repose then
@@ -39,6 +39,6 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(500)
+		Wait(500)
 	end
 end)

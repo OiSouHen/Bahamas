@@ -103,16 +103,16 @@ AddEventHandler("Blackjack:sendBlackjackTableData",function(newBlackjackTableDat
 	blackjackTableData = newBlackjackTableData
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
 	while not closeToCasino do
-		Citizen.Wait(1000)
+		Wait(1000)
 	end
 
 	dealerAnimDict = "anim_casino_b@amb@casino@games@shared@dealer@"
 	RequestAnimDict(dealerAnimDict)
 	while not HasAnimDictLoaded(dealerAnimDict) do
 		RequestAnimDict(dealerAnimDict)
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	for i = 0,#casinoBlackjackDealerPositions,1 do
@@ -121,7 +121,7 @@ Citizen.CreateThread(function()
 		RequestModel(dealerModel)
 		while not HasModelLoaded(dealerModel) do
 			RequestModel(dealerModel)
-			Citizen.Wait(1)
+			Wait(1)
 		end
 
 		dealerEntity = CreatePed(26,dealerModel,casinoBlackjackDealerPositions[i]["dealerPos"]["x"],casinoBlackjackDealerPositions[i]["dealerPos"]["y"],casinoBlackjackDealerPositions[i]["dealerPos"]["z"],casinoBlackjackDealerPositions[i]["dealerHeading"],false,true)
@@ -168,7 +168,7 @@ function resetDealerIdle(dealerPed)
 		RequestAnimDict(dealerAnimDict)
 		while not HasAnimDictLoaded(dealerAnimDict) do
 			RequestAnimDict(dealerAnimDict)
-			Citizen.Wait(1)
+			Wait(1)
 		end
 
 		TaskPlayAnim(dealerPed,dealerAnimDict,"idle",1000.0,-2.0,-1,2,1148846080,0)
@@ -177,7 +177,7 @@ function resetDealerIdle(dealerPed)
 	end
 end
 
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if closeToCasino then
@@ -202,7 +202,7 @@ Citizen.CreateThread(function()
 						PlayAmbientSpeech1(closestDealerPed,"MINIGAME_DEALER_PLACE_CHIPS","SPEECH_PARAMS_FORCE_NORMAL_CLEAR",1)
 						putBetOnTable()
 
-						Citizen.Wait(1000)
+						Wait(1000)
 					else
 						TriggerEvent("Notify","amarelo","Aposta mínima de <b>$"..casinoBlackjackDealerPositions[myTable]["min"].."</b>.",5000)
 					end
@@ -220,7 +220,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 
@@ -232,7 +232,7 @@ AddEventHandler("Blackjack:successBlackjackBet",function()
 	blackjackInstructional = nil
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if closeToCasino then
@@ -249,7 +249,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 
@@ -258,7 +258,7 @@ AddEventHandler("Blackjack:sitAtBlackjackTable",function(chair)
 	goToBlackjackSeat(chair)
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if sittingAtBlackjackTable and canExitBlackjack then
@@ -274,7 +274,7 @@ Citizen.CreateThread(function()
 				RequestAnimDict(blackjackAnimDictToLoad)
 				while not HasAnimDictLoaded(blackjackAnimDictToLoad) do
 					RequestAnimDict(blackjackAnimDictToLoad)
-					Citizen.Wait(1)
+					Wait(1)
 				end
 
 				NetworkStopSynchronisedScene(locate255)
@@ -317,11 +317,11 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local ped = PlayerPedId()
 		if not IsPedInAnyVehicle(ped) then
@@ -345,11 +345,11 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(1000)
+		Wait(1000)
 	end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 
@@ -370,11 +370,11 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if closeToCasino then
@@ -417,7 +417,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 
@@ -449,12 +449,12 @@ AddEventHandler("Blackjack:beginBetsBlackjack",function(gameID,tableId)
 		SetEntityCoordsNoOffset(dealerPed,casinoBlackjackDealerPositions[tableId]["dealerPos"]["x"],casinoBlackjackDealerPositions[tableId]["dealerPos"]["y"],casinoBlackjackDealerPositions[tableId]["dealerPos"]["z"],0,0,1)
 		SetEntityHeading(dealerPed,casinoBlackjackDealerPositions[tableId]["dealerHeading"])
 
-		Citizen.CreateThread(function()
+		CreateThread(function()
 			drawTimerBar = true
 
 			while timeLeft > 0 do
 				timeLeft = timeLeft - 1
-				Citizen.Wait(1000)
+				Wait(1000)
 			end
 
 			timeLeft = 20
@@ -478,7 +478,7 @@ AddEventHandler("Blackjack:beginCardGiveOut",function(gameId,cardData,chairId,ca
 			RequestAnimDict(v)
 			while not HasAnimDictLoaded(v) do
 				RequestAnimDict(v)
-				Citizen.Wait(1)
+				Wait(1)
 			end
 		end
 
@@ -530,7 +530,7 @@ AddEventHandler("Blackjack:standOrHit",function(gameId,chairId,nextCardCount,tab
 			PlayAmbientSpeech1(dealerPed,"MINIGAME_BJACK_DEALER_ANOTHER_CARD","SPEECH_PARAMS_FORCE_NORMAL_CLEAR",1)
 			startStandOrHit(gameId,dealerPed,chairId,true)
 
-			Citizen.CreateThread(function()
+			CreateThread(function()
 				if sittingAtBlackjackTable then
 					timeLeft = 20
 					drawTimerBar = true
@@ -548,7 +548,7 @@ AddEventHandler("Blackjack:standOrHit",function(gameId,chairId,nextCardCount,tab
 							return
 						end
 
-						Citizen.Wait(1000)
+						Wait(1000)
 					end
 				end
 
@@ -619,7 +619,7 @@ function goToBlackjackSeat(blackjackSeatID)
 		RequestAnimDict(v)
 		while not HasAnimDictLoaded(v) do
 			RequestAnimDict(v)
-			Citizen.Wait(1)
+			Wait(1)
 		end
 	end
 
@@ -647,7 +647,7 @@ function goToBlackjackSeat(blackjackSeatID)
 	NetworkStartSynchronisedScene(locate255)
 
 	Citizen.InvokeNative(0x79C0E43EB9B944E2,-2124244681)
-	Citizen.Wait(6000)
+	Wait(6000)
 	Locali98f_55 = NetworkCreateSynchronisedScene(goToVector.x,goToVector.y,goToVector.z,xRot,yRot,zRot,2,1,1,1065353216,0,1065353216)
 	NetworkAddPedToSynchronisedScene(PlayerPedId(),Locali98f_55,"anim_casino_b@amb@casino@games@shared@player@","idle_cardgames",2.0,-2.0,13,16,1148846080,0)
 	NetworkStartSynchronisedScene(Locali98f_55)
@@ -692,7 +692,7 @@ function startSingleDealerDealing(dealerPed,gameId,cardData,nextCardCount,gotCur
 		local cardPos = GetObjectOffsetFromCoords(tablePosX,tablePosY,tablePosZ,vVar8.z,cardOffsetX,cardOffsetY,cardOffsetZ)
 		SetEntityCoordsNoOffset(nextCardObj,cardPos.x,cardPos.y,cardPos.z,0,0,1)
 
-		Citizen.Wait(400)
+		Wait(400)
 	end
 end
 
@@ -734,7 +734,7 @@ function startSingleDealing(chairId,dealerPed,gameId,cardData,nextCardCount,gotC
 		vVar8 = vector3(0.0,0.0,getTableHeading(blackjack_func_368(chairId)))
 		cardObjectOffsetRotation = vVar8 + func_376(iVar5,iVar9,0,false)
 		SetEntityRotation(nextCardObj,cardObjectOffsetRotation.x,cardObjectOffsetRotation.y,cardObjectOffsetRotation.z,2,1)
-		Citizen.Wait(400)
+		Wait(400)
 	end
 end
 
@@ -799,13 +799,13 @@ function startStandOrHit(gameId,dealerPed,chairId,actuallyPlaying)
 	RequestAnimDict("anim_casino_b@amb@casino@games@blackjack@dealer")
 	while not HasAnimDictLoaded("anim_casino_b@amb@casino@games@blackjack@dealer") do 
 		RequestAnimDict("anim_casino_b@amb@casino@games@blackjack@dealer")
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	TaskPlayAnim(dealerPed,"anim_casino_b@amb@casino@games@blackjack@dealer","dealer_focus_player_0" .. chairAnimId .. "_idle_intro",3.0,1.0,-1,2,0,0,0,0 )
 	PlayFacialAnim(dealerPed,"dealer_focus_player_0" .. chairAnimId .. "_idle_facial","anim_casino_b@amb@casino@games@blackjack@dealer")
 	while IsEntityPlayingAnim(dealerPed,"anim_casino_b@amb@casino@games@blackjack@dealer","dealer_focus_player_0" .. chairAnimId .. "_idle_intro") do 
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	TaskPlayAnim(dealerPed,"anim_casino_b@amb@casino@games@blackjack@dealer","dealer_focus_player_0"..chairAnimId.."_idle",3.0,1.0,-1,2,0,0,0,0 )
@@ -820,13 +820,13 @@ function flipDealerCard(dealerPed,gotCurrentHand,tableId,gameId)
 	TaskPlayAnim(dealerPed,"anim_casino_b@amb@casino@games@blackjack@dealer","check_and_turn_card",3.0,1.0,-1,2,0,0,0,0)
 
 	while not HasAnimEventFired(dealerPed,-1345695206) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	AttachEntityToEntity(cardObj,dealerPed,GetPedBoneIndex(dealerPed,28422),0.0,0.0,0.0,0.0,0.0,0.0,0,0,0,1,2,1)
 
 	while not HasAnimEventFired(dealerPed,585557868) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	DetachEntity(cardObj,false,true)
@@ -847,10 +847,10 @@ function checkCard(dealerPed,cardObj)
 	PlayFacialAnim(dealerPed,"check_card_facial","anim_casino_b@amb@casino@games@blackjack@dealer")
 
 	while not HasAnimEventFired(dealerPed,585557868) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
-	Citizen.Wait(100)
+	Wait(100)
 	DetachEntity(cardObj,false,true)
 	SetEntityCoordsNoOffset(cardObj,cardX,cardY,cardZ)
 end
@@ -955,7 +955,7 @@ AddEventHandler("Blackjack:chipsCleanup",function(chairId,tableId)
 			end
 
 			while not HasAnimEventFired(dealerPed,-1345695206) do
-				Citizen.Wait(1)
+				Wait(1)
 			end
 
 			for k,v in pairs(cardObjects) do
@@ -967,7 +967,7 @@ AddEventHandler("Blackjack:chipsCleanup",function(chairId,tableId)
 			end
 
 			while not HasAnimEventFired(dealerPed,585557868) do
-				Citizen.Wait(1)
+				Wait(1)
 			end
 
 			for k,v in pairs(cardObjects) do
@@ -1004,7 +1004,7 @@ function betChipsForNextHand(chipsAmount,chipsProp,something,chairID,someBool,zO
 	RequestModel(chipsProp)
 	while not HasModelLoaded(chipsProp) do
 		RequestModel(chipsProp)
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	vVar8 = vector3(0.0,0.0,getTableHeading(blackjack_func_368(chairID)))
@@ -1029,7 +1029,7 @@ function getNewCardFromMachine(nextCard,chairId,gameId)
 	RequestModel(nextCard)
 	while not HasModelLoaded(nextCard) do
 		RequestModel(nextCard)
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	nextCardHash = GetHashKey(nextCard)
@@ -1056,12 +1056,12 @@ function dealerGiveCards(chairId,dealerPed,cardObj)
 	TaskPlayAnim(dealerPed,"anim_casino_b@amb@casino@games@blackjack@dealer","deal_card_player_0"..seatNumber,3.0,1.0,-1,2,0,0,0,0)
 	PlayFacialAnim(dealerPed,"deal_card_player_0"..seatNumber.."_facial")
 
-	Citizen.Wait(300)
+	Wait(300)
 
 	SetEntityVisible(cardObj,true)
 
 	while not HasAnimEventFired(dealerPed,585557868) do 
-		Citizen.Wait(1)
+		Wait(1)
 	end
 end
 
@@ -1077,15 +1077,15 @@ function dealerGiveSelfCard(dealerPed,cardIndex,cardObj)
 	TaskPlayAnim(dealerPed,"anim_casino_b@amb@casino@games@blackjack@dealer",cardAnim,3.0,1.0,-1,2,0,0,0,0)
 	PlayFacialAnim(dealerPed,cardAnim.."_facial","anim_casino_b@amb@casino@games@blackjack@dealer")
 
-	Citizen.Wait(300)
+	Wait(300)
 
 	SetEntityVisible(cardObj,true)
 
 	while not HasAnimEventFired(dealerPed,585557868) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
-	Citizen.Wait(100)
+	Wait(100)
 end
 
 local chipsProps = {
@@ -1228,7 +1228,7 @@ function ensureCardModelsLoaded()
 			RequestModel(iVar2)
 			while not HasModelLoaded(iVar2) do  
 				RequestModel(iVar2)
-				Citizen.Wait(1)
+				Wait(1)
 			end
 		end
 
@@ -2399,7 +2399,7 @@ end
 function setupBlackjackInstructionalScaleform(scaleform)
 	local scaleform = RequestScaleformMovie(scaleform)
 	while not HasScaleformMovieLoaded(scaleform) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	PushScaleformMovieFunction(scaleform,"CLEAR_ALL")
@@ -2455,7 +2455,7 @@ end
 function setupBlackjackMidBetScaleform(scaleform)
 	local scaleform = RequestScaleformMovie(scaleform)
 	while not HasScaleformMovieLoaded(scaleform) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	PushScaleformMovieFunction(scaleform,"CLEAR_ALL")
@@ -2505,7 +2505,7 @@ function getGenericTextInput()
 	DisplayOnscreenKeyboard(1,"FMMC_MPM_NA","Valor da Aposta:","","","","",30)
 	while (UpdateOnscreenKeyboard() == 0) do
 		DisableAllControlActions(0)
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	if (GetOnscreenKeyboardResult()) then

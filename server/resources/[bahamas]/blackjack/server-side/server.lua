@@ -153,7 +153,7 @@ end)
 -- THREADWHILE
 -----------------------------------------------------------------------------------------------------------------------------------------
 for i = 0,31,1 do
-	Citizen.CreateThread(function()
+	CreateThread(function()
 		math.randomseed(os.clock() * 100000000000)
 
 		while true do
@@ -188,7 +188,7 @@ for i = 0,31,1 do
 					end
 				end
 
-				Citizen.Wait(21000)
+				Wait(21000)
 
 				if blackjackGameData[gameId] ~= nil then
 					for k,v in pairs(blackjackGameData[gameId]) do
@@ -230,7 +230,7 @@ for i = 0,31,1 do
 											local randomCard = math.random(52)
 											table.insert(blackjackGameData[gameId][source]["cardData"],randomCard)
 											TriggerClientEvent("Blackjack:beginCardGiveOut",-1,gameId,blackjackGameData[gameId][source]["cardData"],chairID,cardIndex,getCurrentHand(gameId,source),tableId)
-											Citizen.Wait(3500)
+											Wait(3500)
 										else 
 											blackjackGameData[gameId][source] = nil
 										end
@@ -254,7 +254,7 @@ for i = 0,31,1 do
 								TriggerClientEvent("Blackjack:beginCardGiveOut",-1,gameId,blackjackGameData[gameId]["dealer"]["cardData"],gameId,cardIndex,getCurrentHand(gameId,"dealer"),tableId)
 							end
 
-							Citizen.Wait(1500)
+							Wait(1500)
 						end
 
 						for chairID = chairIdInitial,chairIdFinal do
@@ -273,7 +273,7 @@ for i = 0,31,1 do
 											secondsWaited = 0
 
 											while blackjackGameData[gameId][source][2][nextCardCount] == nil and secondsWaited < 20 do
-												Citizen.Wait(100)
+												Wait(100)
 												secondsWaited = secondsWaited + 0.1
 											end
 
@@ -283,7 +283,7 @@ for i = 0,31,1 do
 												table.insert(blackjackGameData[gameId][source]["cardData"],randomCard)
 												TriggerClientEvent("Blackjack:singleCard",-1,gameId,randomCard,chairID,nextCardCount,getCurrentHand(gameId,source),tableId) 
 
-												Citizen.Wait(2000)
+												Wait(2000)
 
 												local currentHand = getCurrentHand(gameId,source)
 												if currentHand > 21 then
@@ -324,12 +324,12 @@ for i = 0,31,1 do
 						table.insert(blackjackGameData[gameId]["dealer"]["cardData"],randomCard)
 						TriggerClientEvent("Blackjack:beginCardGiveOut",-1,gameId,blackjackGameData[gameId]["dealer"]["cardData"],gameId,1,getCurrentHand(gameId,"dealer"),tableId)
 
-						Citizen.Wait(2800)
+						Wait(2800)
 
 						dealerHand = getCurrentHand(gameId,"dealer")
 						TriggerClientEvent("Blackjack:flipDealerCard",-1,dealerHand,tableId,gameId)
 
-						Citizen.Wait(2800)
+						Wait(2800)
 
 						local allPlayersHaveBusted = true
 						for k,v in pairs(blackjackGameData[gameId]) do
@@ -365,7 +365,7 @@ for i = 0,31,1 do
 									table.insert(blackjackGameData[gameId]["dealer"]["cardData"],randomCard)
 									TriggerClientEvent("Blackjack:singleDealerCard",-1,gameId,randomCard,nextCardCount,getCurrentHand(gameId,"dealer"),tableId)
 
-									Citizen.Wait(2800)
+									Wait(2800)
 
 									nextCardCount = nextCardCount + 1
 
@@ -441,7 +441,7 @@ for i = 0,31,1 do
 								if blackjackGameData[gameId][source] ~= nil then
 									TriggerClientEvent("Blackjack:chipsCleanup",-1,chairID,tableId)
 									TriggerClientEvent("Blackjack:chipsCleanup",-1,tostring(chairID).."chips",tableId)
-									Citizen.Wait(3500)
+									Wait(3500)
 								end
 							end
 						end
@@ -457,10 +457,10 @@ for i = 0,31,1 do
 					end
 				end
 			else
-				Citizen.Wait(1000)
+				Wait(1000)
 			end
 
-			Citizen.Wait(1000)
+			Wait(1000)
 		end
 	end)
 end

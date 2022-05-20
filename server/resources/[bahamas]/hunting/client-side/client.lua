@@ -165,7 +165,7 @@ local animalCoords = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADSYSTEM
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		local ped = PlayerPedId()
@@ -210,7 +210,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -234,12 +234,12 @@ AddEventHandler("hunting:animalCutting",function()
 						TriggerEvent("cancelando",true)
 						animalHunting[k] = nil
 
-						Citizen.Wait(1000)
+						Wait(1000)
 
 						vRP.playAnim(true,{"anim@gangops@facility@servers@bodysearch@","player_search"},true)
 						vRP.playAnim(false,{"amb@medic@standing@kneel@base","base"},true)
 
-						Citizen.Wait(15000)
+						Wait(15000)
 
 						TriggerEvent("player:blockCommands",false)
 						TriggerEvent("cancelando",false)
@@ -271,7 +271,7 @@ function newHunting(i)
 
 	RequestModel(mHash)
 	while not HasModelLoaded(mHash) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	if HasModelLoaded(mHash) then

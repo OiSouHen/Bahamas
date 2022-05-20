@@ -54,7 +54,7 @@ AddEventHandler("dismantle:checkVehicle",function(vehicle)
 			for _,v in pairs(vehDoors) do
 				local objectExist = GetEntityBoneIndexByName(vehicle[1],v[1])
 				if objectExist ~= -1 then
-					Citizen.Wait(10000)
+					Wait(10000)
 					SetVehicleDoorBroken(vehicle[1],v[2],false)
 				end
 			end
@@ -62,7 +62,7 @@ AddEventHandler("dismantle:checkVehicle",function(vehicle)
 			for _,v in pairs(vehTyres) do
 				local objectExist = GetEntityBoneIndexByName(vehicle[1],v[1])
 				if objectExist ~= -1 then
-					Citizen.Wait(10000)
+					Wait(10000)
 					SetVehicleTyreBurst(vehicle[1],v[2],1,1000.01)
 				end
 			end

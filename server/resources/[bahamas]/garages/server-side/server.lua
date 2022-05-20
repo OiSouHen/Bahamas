@@ -374,7 +374,7 @@ function cRP.spawnVehicles(vehName,garageName)
 								local vehObject = CreateVehicle(mHash,vehCoords[1],vehCoords[2],vehCoords[3],vehCoords[4],true,true)
 
 								while not DoesEntityExist(vehObject) do
-									Citizen.Wait(1)
+									Wait(1)
 								end
 
 								local netVeh = NetworkGetNetworkIdFromEntity(vehObject)
@@ -390,7 +390,7 @@ function cRP.spawnVehicles(vehName,garageName)
 										local vehObject = CreateVehicle(mHash,vehCoords[1],vehCoords[2],vehCoords[3],vehCoords[4],true,true)
 
 										while not DoesEntityExist(vehObject) do
-											Citizen.Wait(1)
+											Wait(1)
 										end
 
 										local netVeh = NetworkGetNetworkIdFromEntity(vehObject)
@@ -409,7 +409,7 @@ function cRP.spawnVehicles(vehName,garageName)
 							local vehObject = CreateVehicle(mHash,vehCoords[1],vehCoords[2],vehCoords[3],vehCoords[4],true,true)
 
 							while not DoesEntityExist(vehObject) do
-								Citizen.Wait(1)
+								Wait(1)
 							end
 
 							local netVeh = NetworkGetNetworkIdFromEntity(vehObject)
@@ -467,7 +467,7 @@ RegisterCommand("car",function(source,args,rawCommand)
 			local vehObject = CreateVehicle(mHash,coords["x"],coords["y"],coords["z"],heading,true,true)
 
 			while not DoesEntityExist(vehObject) do
-				Citizen.Wait(1)
+				Wait(1)
 			end
 
 			local netVeh = NetworkGetNetworkIdFromEntity(vehObject)
@@ -528,7 +528,7 @@ AddEventHandler("garages:lockVehicle",function(vehNet,vehPlate,vehLock)
 
 			if not vRPC.inVehicle(source) then
 				vRPC.playAnim(source,true,{"anim@mp_player_intmenu@key_fob@","fob_click"},false)
-				Citizen.Wait(400)
+				Wait(400)
 				vRPC.stopAnim(source)
 			end
 		end
@@ -770,7 +770,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ASYNCFUNCTION
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	local configFile = LoadResourceFile("logsystem","garageConfig.json")
 	local configTable = json.decode(configFile)
 

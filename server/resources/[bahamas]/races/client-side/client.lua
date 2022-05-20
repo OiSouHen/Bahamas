@@ -27,7 +27,7 @@ local inativeRaces = false
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADRACES
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local waitPacket = 500
 		if not inativeRaces then
@@ -116,13 +116,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(waitPacket)
+		Wait(waitPacket)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADTIMERS
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		if ExplodeRace then
 			if GetGameTimer() >= ExplodeTimers then
@@ -130,7 +130,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(1000)
+		Wait(1000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -185,7 +185,7 @@ function leaveRace()
 	Laps = 1
 
 	if ExplodeRace then
-		Citizen.Wait(3000)
+		Wait(3000)
 
 		local vehicle = GetPlayersLastVehicle()
 		local coords = GetEntityCoords(vehicle)

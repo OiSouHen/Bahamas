@@ -79,7 +79,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADGLOBAL
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		if playerActive then
 			if divingMask ~= nil then
@@ -95,13 +95,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(5000)
+		Wait(5000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADFOODS
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		if playerActive then
 			local ped = PlayerPedId()
@@ -113,13 +113,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(30000)
+		Wait(30000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADGLOBAL
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		if GetGameTimer() >= timeDate then
 			timeDate = GetGameTimer() + 10000
@@ -135,13 +135,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(5000)
+		Wait(5000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADTIMERS
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		if homeInterior then
 			SetWeatherTypeNow("CLEAR")
@@ -159,7 +159,7 @@ Citizen.CreateThread(function()
 			DisableControlAction(1,75,true)
 		end
 
-		Citizen.Wait(1)
+		Wait(1)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -178,7 +178,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADHUD
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if playerActive then
@@ -203,7 +203,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -399,7 +399,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADBELT
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if playerActive then
@@ -420,7 +420,7 @@ Citizen.CreateThread(function()
 							SetEntityVelocity(ped,beltVelocity["x"],beltVelocity["y"],beltVelocity["z"])
 							ApplyDamageToPed(ped,50,false)
 
-							Citizen.Wait(1)
+							Wait(1)
 
 							SetPedToRagdoll(ped,5000,5000,0,0,0,0)
 						end
@@ -440,7 +440,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -483,7 +483,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADHEALTHREDUCE
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	local foodTimers = GetGameTimer()
 
 	while true do
@@ -513,13 +513,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(1000)
+		Wait(1000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADSHAKESTRESS
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if playerActive then
@@ -542,7 +542,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -592,12 +592,12 @@ AddEventHandler("hud:setDiving",function()
 
 		RequestModel(tankModel)
 		while not HasModelLoaded(tankModel) do
-			Citizen.Wait(1)
+			Wait(1)
 		end
 
 		RequestModel(maskModel)
 		while not HasModelLoaded(maskModel) do
-			Citizen.Wait(1)
+			Wait(1)
 		end
 
 		if HasModelLoaded(tankModel) then

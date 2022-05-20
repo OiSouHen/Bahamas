@@ -1,4 +1,4 @@
-Citizen.CreateThread(function()
+CreateThread(function()
 	AddTextEntryByHash(GetHashKey("r6_exh_1"),"Tuning 01")
 	AddTextEntryByHash(GetHashKey("r6_exh_2"),"Tuning 02")
 	AddTextEntryByHash(GetHashKey("r6_lever"),"Tuning 03")

@@ -413,7 +413,7 @@ local currentChairData = nil
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADENTERCASINO
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	for k,v in pairs(slotMachine) do
 		createSlots(k,v)
 	end
@@ -434,7 +434,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(1000)
+		Wait(1000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -462,7 +462,7 @@ createSlots = function(index,data)
 
 			RequestAnimDict(aHash)
 			while not HasAnimDictLoaded(aHash) do
-				Citizen.Wait(1)
+				Wait(1)
 			end
 
 			local rot = currentChairData.rotation + vector3(0.0,0.0,-90.0)
@@ -473,13 +473,13 @@ createSlots = function(index,data)
 			model = GetHashKey(self.data.prop1)
 			RequestModel(model)
 			while not HasModelLoaded(model) do
-				Citizen.Wait(1)
+				Wait(1)
 			end
 
 			model = GetHashKey(self.data.prop2)
 			RequestModel(model)
 			while not HasModelLoaded(model) do
-				Citizen.Wait(1)
+				Wait(1)
 			end
 
 			local rot = vector3(0.0,0.0,self.data.rot + 0.0)
@@ -503,9 +503,9 @@ createSlots = function(index,data)
 			SetEntityHeading(self.spin2,self.data.rot)
 			SetEntityHeading(self.spin3,self.data.rot)
 
-			Citizen.CreateThread(function()
+			CreateThread(function()
 				while selectedSlot ~= nil do
-					Citizen.Wait(1)
+					Wait(1)
 
 					if IsDisabledControlJustPressed(0,194) then
 						if not Spinning then
@@ -533,13 +533,13 @@ createSlots = function(index,data)
 							self.spin2 = GetClosestObjectOfType(Offset.x + 0.000,Offset.y,Offset.z,1.0,GetHashKey(self.data.prop1),false,false,false)
 							self.spin3 = GetClosestObjectOfType(Offset.x + 0.118,Offset.y,Offset.z,1.0,GetHashKey(self.data.prop1),false,false,false)
 
-							Citizen.Wait(5000)
+							Wait(5000)
 						end
 					end
 				end
 			end)
 
-			Citizen.Wait(1000)
+			Wait(1000)
 		else
 			selectedSlot = nil
 
@@ -547,7 +547,7 @@ createSlots = function(index,data)
 
 			RequestAnimDict(aHash)
 			while not HasAnimDictLoaded(aHash) do
-				Citizen.Wait(1)
+				Wait(1)
 			end
 
 			local rot = currentChairData.rotation + vector3(0.0,0.0,-90.0)
@@ -555,7 +555,7 @@ createSlots = function(index,data)
 			NetworkAddPedToSynchronisedScene(PlayerPedId(),currentSitting,aHash,"exit_left",2.0,2.0,13,16,0,0)
 			NetworkStartSynchronisedScene(currentSitting)
 
-			Citizen.Wait(3000)
+			Wait(3000)
 
 			ClearPedTasks(PlayerPedId())
 			TriggerServerEvent("slotmachine:notUsing",self.index)
@@ -567,7 +567,7 @@ createSlots = function(index,data)
 
 		RequestAnimDict(aHash)
 		while not HasAnimDictLoaded(aHash) do
-			Citizen.Wait(1)
+			Wait(1)
 		end
 
 		local rot = currentChairData.rotation + vector3(0.0,0.0,-90.0)
@@ -575,7 +575,7 @@ createSlots = function(index,data)
 		NetworkAddPedToSynchronisedScene(PlayerPedId(),currentSitting,aHash,"press_spin_a",2.0,2.0,50,16,2.0,0)
 		NetworkStartSynchronisedScene(currentSitting)
 
-		Citizen.Wait(500)
+		Wait(500)
 
 		DeleteEntity(self.spin1)
 		DeleteEntity(self.spin2)
@@ -646,7 +646,7 @@ createSlots = function(index,data)
 				NetworkStartSynchronisedScene(currentSitting)
 			end
 
-			Citizen.Wait(10)
+			Wait(10)
 		end
 
 		Spinning = false
@@ -668,7 +668,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADSYSTEM
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if enterCasino and selectedSlot == nil then
@@ -696,7 +696,7 @@ Citizen.CreateThread(function()
 							local aHash = "anim_casino_b@amb@casino@games@shared@player@"
 							RequestAnimDict(aHash)
 							while not HasAnimDictLoaded(aHash) do
-								Citizen.Wait(1)
+								Wait(1)
 							end
 
 							NetworkAddPedToSynchronisedScene(PlayerPedId(),currentSitting,"anim_casino_b@amb@casino@games@shared@player@","sit_enter_left",2.0,-2.0,13,16,2.0,0)
@@ -718,7 +718,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

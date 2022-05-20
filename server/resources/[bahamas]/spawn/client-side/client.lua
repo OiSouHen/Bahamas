@@ -35,7 +35,7 @@ RegisterNetEvent("spawn:generateJoin")
 AddEventHandler("spawn:generateJoin",function()
 	DoScreenFadeOut(0)
 
-	Citizen.Wait(1000)
+	Wait(1000)
 
 	local ped = PlayerPedId()
 	characterCamera = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA",667.43,1025.9,378.87,340.0,0.0,342.0,60.0,false,0)
@@ -109,7 +109,7 @@ AddEventHandler("spawn:justSpawn",function(status,spawnType)
 			spawnLocates[numberLine] = { x = v[1], y = v[2], z = v[3], name = v[4], hash = numberLine }
 		end
 
-		Citizen.Wait(2000)
+		Wait(2000)
 
 		local ped = PlayerPedId()
 		local coords = GetEntityCoords(ped)
@@ -127,7 +127,7 @@ AddEventHandler("spawn:justSpawn",function(status,spawnType)
 		SetNuiFocus(false,false)
 		brokenCamera = false
 
-		Citizen.Wait(1000)
+		Wait(1000)
 
 		DoScreenFadeIn(1000)
 	end
@@ -159,14 +159,14 @@ RegisterNUICallback("spawnChosen",function(data)
 		characterCamera = nil
 		brokenCamera = false
 
-		Citizen.Wait(1000)
+		Wait(1000)
 
 		DoScreenFadeIn(1000)
 	else
 		brokenCamera = false
 		DoScreenFadeOut(0)
 
-		Citizen.Wait(1000)
+		Wait(1000)
 
 		SetCamRot(characterCamera,270.0)
 		SetCamActive(characterCamera,true)
@@ -199,7 +199,7 @@ RegisterNUICallback("spawnChosen",function(data)
 				break
 			end
 
-			Citizen.Wait(0)
+			Wait(0)
 		end
 	end
 end)

@@ -45,13 +45,13 @@ AddEventHandler("vRP:playerSpawn",function(user_id,source)
 			dataTable["oxigen"] = 100
 		end
 
-		Citizen.Wait(1000)
+		Wait(1000)
 
 		vRPC.applySkin(source,dataTable["skin"])
 		vRPC.setArmour(source,dataTable["armour"])
 		vRPC.setHealth(source,dataTable["health"])
 
-		Citizen.Wait(1000)
+		Wait(1000)
 
 		TriggerClientEvent("statusStress",source,dataTable["stress"])
 		TriggerClientEvent("statusHunger",source,dataTable["hunger"])
@@ -62,7 +62,7 @@ AddEventHandler("vRP:playerSpawn",function(user_id,source)
 		TriggerClientEvent("skinshop:apply",source,vRP.userData(user_id,"Clothings"))
 		TriggerClientEvent("tattoos:apply",source,vRP.userData(user_id,"Tatuagens"))
 
-		Citizen.Wait(1000)
+		Wait(1000)
 
 		TriggerClientEvent("vrp:playerActive",source,user_id)
 	end

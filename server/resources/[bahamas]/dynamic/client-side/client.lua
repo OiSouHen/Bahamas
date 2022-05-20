@@ -211,7 +211,7 @@ AddEventHandler("dynamic:animalSpawn",function(model)
 
 		RequestModel(mHash)
 		while not HasModelLoaded(mHash) do
-			Citizen.Wait(1)
+			Wait(1)
 		end
 
 		local coords = GetOffsetFromEntityInWorldCoords(ped,0.0,1.0,0.0)
@@ -227,7 +227,7 @@ AddEventHandler("dynamic:animalSpawn",function(model)
 		NetworkRegisterEntityAsNetworked(animalHahs)
 		while not NetworkGetEntityIsNetworked(animalHahs) do
 			NetworkRegisterEntityAsNetworked(animalHahs)
-			Citizen.Wait(1)
+			Wait(1)
 		end
 
 		TriggerEvent("dynamic:animalFunctions","seguir")

@@ -37,7 +37,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADCANCELANDO
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if cancelando then
@@ -53,13 +53,13 @@ Citizen.CreateThread(function()
 			DisablePlayerFiring(PlayerPedId(),true)
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADCELULAR
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if celular or animActived or casinoActive then
@@ -77,7 +77,7 @@ Citizen.CreateThread(function()
 			DisablePlayerFiring(PlayerPedId(),true)
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ end)
 function tvRP.loadAnimSet(dict)
 	RequestAnimDict(dict)
 	while not HasAnimDictLoaded(dict) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -133,7 +133,7 @@ function tvRP.createObjects(dict,anim,prop,flag,mao,altura,pos1,pos2,pos3,pos4,p
 
 	RequestModel(mHash)
 	while not HasModelLoaded(mHash) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	if HasModelLoaded(mHash) then
@@ -165,7 +165,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADANIM
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		local ped = PlayerPedId()
@@ -176,7 +176,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -211,7 +211,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- POINT
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 100
 		if point then
@@ -248,13 +248,13 @@ Citizen.CreateThread(function()
 			Citizen.InvokeNative(0xB0A6CFD2C69C1088,ped,"isFirstPerson",Citizen.InvokeNative(0xEE778F8C7E1142E2,Citizen.InvokeNative(0x19CAFA3C87F7C2FF)) == 4)
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- DISABLECONTROLS
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		DisableControlAction(1,37,false)
 		DisableControlAction(1,99,false)
@@ -275,7 +275,7 @@ Citizen.CreateThread(function()
 		DisableControlAction(1,349,false)
 		DisableControlAction(1,192,false)
 
-		Citizen.Wait(4)
+		Wait(4)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -355,7 +355,7 @@ RegisterCommand("cRenginecrouch",function(source,args)
 			elseif not blockDrunk then
 				RequestAnimSet("move_ped_crouched")
 				while not HasAnimSetLoaded("move_ped_crouched") do
-					Citizen.Wait(1)
+					Wait(1)
 				end
 
 				if crouch then

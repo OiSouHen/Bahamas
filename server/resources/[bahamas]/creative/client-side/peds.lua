@@ -643,7 +643,7 @@ local pedList = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADPEDLIST
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local ped = PlayerPedId()
 		local coords = GetEntityCoords(ped)
@@ -657,7 +657,7 @@ Citizen.CreateThread(function()
 
 						RequestModel(mHash)
 						while not HasModelLoaded(mHash) do
-							Citizen.Wait(1)
+							Wait(1)
 						end
 
 						if HasModelLoaded(mHash) then
@@ -704,7 +704,7 @@ Citizen.CreateThread(function()
 								else
 									RequestAnimDict(v["anim"][1])
 									while not HasAnimDictLoaded(v["anim"][1]) do
-										Citizen.Wait(1)
+										Wait(1)
 									end
 
 									TaskPlayAnim(localPeds[k],v["anim"][1],v["anim"][2],8.0,0.0,-1,1,0,0,0,0)
@@ -721,6 +721,6 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(1000)
+		Wait(1000)
 	end
 end)

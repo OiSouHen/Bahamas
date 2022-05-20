@@ -95,14 +95,14 @@ AddEventHandler("checkin:initCheck",function()
 						end
 
 						DoScreenFadeOut(0)
-						Citizen.Wait(1000)
+						Wait(1000)
 
 						SetEntityCoords(ped,v[1],v[2],v[3],1,0,0,0)
 
-						Citizen.Wait(1000)
+						Wait(1000)
 						TriggerEvent("emotes","checkinskyz")
 
-						Citizen.Wait(1000)
+						Wait(1000)
 						DoScreenFadeIn(1000)
 					end
 

@@ -148,7 +148,7 @@ AddEventHandler("lvc_SetAirManuState_c",function(sender,newstate)
 	end
 end)
 ---------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if count_sndclean_timer > 400 then
@@ -326,6 +326,6 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)

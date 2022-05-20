@@ -78,7 +78,7 @@ AddEventHandler("police:insertBarrier",function()
 
 		RequestModel(mHash)
 		while not HasModelLoaded(mHash) do
-			Citizen.Wait(1)
+			Wait(1)
 		end
 
 		if HasModelLoaded(mHash) then
@@ -239,7 +239,7 @@ local polyPrison = PolyZone:Create({
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREAD - SYSTEM
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	SetNuiFocus(false,false)
 
 	while true do
@@ -262,7 +262,7 @@ Citizen.CreateThread(function()
 					vRP.playAnim(false,{"amb@prop_human_parking_meter@female@idle_a","idle_a_female"},true)
 					SetEntityCoords(ped,inLocates[inSelect][1],inLocates[inSelect][2],inLocates[inSelect][3] - 1,1,0,0,0)
 
-					Citizen.Wait(10000)
+					Wait(10000)
 
 					TriggerEvent("player:blockCommands",false)
 					TriggerEvent("cancelando",false)
@@ -288,7 +288,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -308,7 +308,7 @@ local runAway = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADRUNAWAY
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if inPrison then
@@ -339,7 +339,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

@@ -32,7 +32,7 @@ function safeCraking(numbers)
 	RequestAmbientAudioBank("SAFE_CRACK",false)
 	RequestStreamedTextureDict("MPSafeCracking",false)
 	while not HasStreamedTextureDictLoaded("MPSafeCracking") do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	difficultySetting = {}
@@ -59,7 +59,7 @@ function safeCraking(numbers)
 	crackingAnim(1)
 
 	while cracking do
-		Citizen.Wait(1)
+		Wait(1)
 		dwText("~g~F~w~  GIRA PARA ESQUERDA     |     ~g~H~w~  GIRA PARA DIREITA     |     ~y~G~w~  TENTATIVA",4,0.5,0.93,0.38,255,255,255,255)
 
 		DisableControlAction(1,257,true)
@@ -173,7 +173,7 @@ end
 function loadAnim(dict)
 	RequestAnimDict(dict)
 	while not HasAnimDictLoaded(dict) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 end
 -----------------------------------------------------------------------------------------------------------------------------------------

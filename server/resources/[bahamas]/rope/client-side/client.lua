@@ -47,7 +47,7 @@ function cRP.syncTarget(target,animationLib,animation2,distans,distans2,height,l
 
 	RequestAnimDict(animationLib)
 	while not HasAnimDictLoaded(animationLib) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	if spin == nil then
@@ -79,7 +79,7 @@ function cRP.syncSource(animationLib,animation,length,controlFlag,animFlag)
 
 	RequestAnimDict(animationLib)
 	while not HasAnimDictLoaded(animationLib) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	if controlFlag == nil then
@@ -107,7 +107,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADANIM
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if inCarry then
@@ -120,6 +120,6 @@ Citizen.CreateThread(function()
 			DisableControlAction(1,23,true)
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)

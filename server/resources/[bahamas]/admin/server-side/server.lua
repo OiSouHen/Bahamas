@@ -502,7 +502,7 @@ RegisterCommand("kickall",function(source,args,rawCommand)
 		local playerList = vRP.userList()
 		for k,v in pairs(playerList) do
 			vRP.kick(k,"Desconectado, a cidade reiniciou.")
-			Citizen.Wait(100)
+			Wait(100)
 		end
 
 		TriggerEvent("admin:KickAll")

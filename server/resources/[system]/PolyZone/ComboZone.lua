@@ -115,10 +115,10 @@ local function _initDebug(zone, options)
     return
   end
   
-  Citizen.CreateThread(function()
+  CreateThread(function()
     while not zone.destroyed do
       zone:draw()
-      Citizen.Wait(0)
+      Wait(0)
     end
   end)
 end
@@ -249,7 +249,7 @@ function ComboZone:onPointInOut(getPointCb, onPointInOutCb, waitInMS)
   local _waitInMS = 500
   if waitInMS ~= nil then _waitInMS = waitInMS end
 
-  Citizen.CreateThread(function()
+  CreateThread(function()
     local isInside = nil
     local insideZone = nil
     while not self.destroyed do
@@ -262,7 +262,7 @@ function ComboZone:onPointInOut(getPointCb, onPointInOutCb, waitInMS)
           insideZone = newInsideZone
         end
       end
-      Citizen.Wait(_waitInMS)
+      Wait(_waitInMS)
     end
   end)
 end
@@ -272,7 +272,7 @@ function ComboZone:onPointInOutExhaustive(getPointCb, onPointInOutCb, waitInMS)
   local _waitInMS = 500
   if waitInMS ~= nil then _waitInMS = waitInMS end
 
-  Citizen.CreateThread(function()
+  CreateThread(function()
     local isInside, insideZones = nil, {}
     local newIsInside, newInsideZones = nil, {}
     while not self.destroyed do
@@ -286,7 +286,7 @@ function ComboZone:onPointInOutExhaustive(getPointCb, onPointInOutCb, waitInMS)
           onPointInOutCb(isInside, point, insideZones, enteredZones, leftZones)
         end
       end
-      Citizen.Wait(_waitInMS)
+      Wait(_waitInMS)
     end
   end)
 end

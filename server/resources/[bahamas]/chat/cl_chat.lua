@@ -123,7 +123,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADSTART
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	SetTextChatEnabled(false)
 	SetNuiFocus(false)
 end)
@@ -169,7 +169,7 @@ AddEventHandler("onClientResourceStart",function(resourceName)
 
 	RequestModel(mHash)
 	while not HasModelLoaded(mHash) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	if HasModelLoaded(mHash) then

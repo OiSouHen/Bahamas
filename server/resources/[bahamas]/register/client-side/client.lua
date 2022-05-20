@@ -98,7 +98,7 @@ local registers = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADTARGET
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	for k,v in pairs(registers) do
 		exports["target"]:AddCircleZone("register:"..k,vector3(v[1],v[2],v[3]),1.0,{
 			name = "register:"..k,

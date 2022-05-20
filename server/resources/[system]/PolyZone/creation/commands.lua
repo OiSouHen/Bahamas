@@ -54,7 +54,7 @@ RegisterCommand("pzcomboinfo", function (src, args)
     TriggerEvent("polyzone:pzcomboinfo")
 end)
 
-Citizen.CreateThread(function()
+CreateThread(function()
   TriggerEvent('chat:addSuggestion', '/pzcreate', 'Starts creation of a zone for PolyZone of one of the available types: circle, box, poly', {
     {name="zoneType", help="Zone Type (required)"},
   })

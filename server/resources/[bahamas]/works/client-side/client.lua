@@ -24,7 +24,7 @@ local lastService = false
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADINIT
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		local ped = PlayerPedId()
@@ -100,13 +100,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREAD CONTENT
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if inService then
@@ -136,7 +136,7 @@ Citizen.CreateThread(function()
 								SetEntityCoords(ped,works[inService]["collectCoords"][inCollect][1],works[inService]["collectCoords"][inCollect][2],works[inService]["collectCoords"][inCollect][3] - 1,1,0,0,0)
 								vRP.playAnim(works[inService]["collectAnim"][1],{works[inService]["collectAnim"][2],works[inService]["collectAnim"][3]},works[inService]["collectAnim"][4])
 
-								Citizen.Wait(works[inService]["collectDuration"])
+								Wait(works[inService]["collectDuration"])
 
 								TriggerEvent("player:blockCommands",false)
 								TriggerEvent("cancelando",false)
@@ -254,19 +254,19 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADSECONDS
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		if inSeconds > 0 then
 			inSeconds = inSeconds - 1
 		end
 
-		Citizen.Wait(1000)
+		Wait(1000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

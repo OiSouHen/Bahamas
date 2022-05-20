@@ -249,7 +249,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADSYSTEM
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	local function playerConnect(name,setKickReason,deferrals)
 		local source = source
 		local ids = steamIds(source)
@@ -258,9 +258,9 @@ Citizen.CreateThread(function()
 
 		deferrals.defer()
 
-		Citizen.CreateThread(function()
+		CreateThread(function()
 			while connecting do
-				Citizen.Wait(500)
+				Wait(500)
 				if not connecting then
 					return
 				end
@@ -268,16 +268,16 @@ Citizen.CreateThread(function()
 			end
 		end)
 
-		Citizen.Wait(1000)
+		Wait(1000)
 
 		local function done(message)
 			connecting = false
-			Citizen.CreateThread(function()
+			CreateThread(function()
 				if message then
 					deferrals.update(tostring(message) and tostring(message) or "")
 				end
 
-				Citizen.Wait(1000)
+				Wait(1000)
 
 				if message then
 					deferrals.done(tostring(message) and tostring(message) or "")
@@ -370,7 +370,7 @@ Citizen.CreateThread(function()
 
 		update(string.format(Lang.position,pos,#Queue.QueueList))
 
-		Citizen.CreateThread(function()
+		CreateThread(function()
 			if rejoined then
 				return
 			end
@@ -379,7 +379,7 @@ Citizen.CreateThread(function()
 			local dotCount = 0
 
 			while true do
-				Citizen.Wait(1000)
+				Wait(1000)
 				local dots = ""
 
 				dotCount = dotCount + 1
@@ -408,7 +408,7 @@ Citizen.CreateThread(function()
 				if pos <= 1 and notFull() then
 					local added = addConnect(ids)
 					data.deferrals.update(Lang.join)
-					Citizen.Wait(500)
+					Wait(500)
 
 					if not added then
 						data.deferrals.done(Lang.connecterror)

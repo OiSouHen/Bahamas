@@ -260,7 +260,7 @@ end
 
 local lastTalkingStatus = false
 local lastRadioStatus = false
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		while not MumbleIsConnected() do
 			currentGrid = -1

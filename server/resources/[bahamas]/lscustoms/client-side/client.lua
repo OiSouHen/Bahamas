@@ -194,7 +194,7 @@ function AttemptPurchase(type,upgradeLevel)
 	attemptingPurchase = true
 
 	while attemptingPurchase do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	if not isPurchaseSuccessful then
@@ -1011,7 +1011,7 @@ function disableControls()
 				PlaySoundFrontend(-1,"NO","HUD_FRONTEND_DEFAULT_SOUNDSET",1)
 			end
 
-			Citizen.Wait(0)
+			Wait(0)
 		end
 	end)
 end
@@ -1034,7 +1034,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADOPEN
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if not activeBennys then
@@ -1058,7 +1058,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------

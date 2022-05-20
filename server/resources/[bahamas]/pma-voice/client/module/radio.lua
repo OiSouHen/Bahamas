@@ -89,7 +89,7 @@ RegisterCommand("+radiotalk",function()
 			end
 			TaskPlayAnim(ped,"random@arrests","generic_radio_chatter",8.0,0.0,-1,49,0,0,0,0)
 
-			Citizen.CreateThread(function()
+			CreateThread(function()
 				TriggerEvent("pma-voice:radioActive",true)
 
 				while radioPressed do

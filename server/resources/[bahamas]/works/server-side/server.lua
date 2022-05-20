@@ -1908,7 +1908,7 @@ AddEventHandler("vRP:playerLeave",function(user_id,source)
 	end
 end)
 
-Citizen.CreateThread(function()
-	Citizen.Wait(1000)
+CreateThread(function()
+	Wait(1000)
 	vCLIENT.updateWorks(-1,works)
 end)

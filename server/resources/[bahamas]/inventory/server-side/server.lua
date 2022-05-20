@@ -100,7 +100,7 @@ local fishCoords = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- ACTIVESYNC
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		for k,v in pairs(activeItens) do
 			if activeItens[k] > 0 then
@@ -108,13 +108,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(1000)
+		Wait(1000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADTIMER
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		for k,v in pairs(dropTimer) do
 			if dropTimer[k] > 0 then
@@ -126,7 +126,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(1000)
+		Wait(1000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -500,7 +500,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -523,7 +523,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -546,7 +546,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -569,7 +569,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -593,7 +593,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -742,7 +742,7 @@ function cRP.useItem(slot,rAmount)
 								end)
 							end
 
-							Citizen.Wait(7000)
+							Wait(7000)
 
 							TriggerClientEvent("inventory:blockButtons",source,false)
 							vRPC.stopAnim(source,false)
@@ -804,7 +804,7 @@ function cRP.useItem(slot,rAmount)
 									end
 								end
 
-								Citizen.Wait(100)
+								Wait(100)
 							until activeItens[user_id] == nil
 						else
 							TriggerClientEvent("Notify",source,"amarelo","Não pode utilizar de vida cheia ou nocauteado.",5000)
@@ -837,7 +837,7 @@ function cRP.useItem(slot,rAmount)
 									end
 								end
 
-								Citizen.Wait(100)
+								Wait(100)
 							until activeItens[user_id] == nil
 						else
 							TriggerClientEvent("Notify",source,"azul","Não pode utilizar de vida cheia ou nocauteado.",5000)
@@ -867,7 +867,7 @@ function cRP.useItem(slot,rAmount)
 								end
 							end
 
-							Citizen.Wait(100)
+							Wait(100)
 						until activeItens[user_id] == nil
 					end
 				return end
@@ -899,7 +899,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -925,7 +925,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -949,7 +949,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -973,7 +973,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -997,7 +997,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1030,7 +1030,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1057,7 +1057,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1076,7 +1076,7 @@ function cRP.useItem(slot,rAmount)
 							TriggerClientEvent("inventory:blockButtons",source,false)
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1102,7 +1102,7 @@ function cRP.useItem(slot,rAmount)
 									end
 								end
 
-								Citizen.Wait(100)
+								Wait(100)
 							until activeItens[user_id] == nil
 						else
 							TriggerClientEvent("Notify",source,"amarelo","Não pode utilizar de vida cheia ou nocauteado.",5000)
@@ -1132,7 +1132,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1155,7 +1155,7 @@ function cRP.useItem(slot,rAmount)
 							vRPC.createObjects(source,"amb@world_human_binoculars@male@enter","enter","prop_binoc_01",50,28422)
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1178,7 +1178,7 @@ function cRP.useItem(slot,rAmount)
 							vRPC.createObjects(source,"amb@world_human_paparazzi@male@base","base","prop_pap_camera_01",49,28422)
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1215,7 +1215,7 @@ function cRP.useItem(slot,rAmount)
 										end
 									end
 
-									Citizen.Wait(100)
+									Wait(100)
 								until activeItens[user_id] == nil
 							end
 						end
@@ -1251,7 +1251,7 @@ function cRP.useItem(slot,rAmount)
 								end
 							end
 
-							Citizen.Wait(100)
+							Wait(100)
 						until activeItens[user_id] == nil
 					end
 				return end
@@ -1280,7 +1280,7 @@ function cRP.useItem(slot,rAmount)
 									end
 								end
 
-								Citizen.Wait(100)
+								Wait(100)
 							until activeItens[user_id] == nil
 						end
 					end
@@ -1344,7 +1344,7 @@ function cRP.useItem(slot,rAmount)
 									end
 								end
 
-								Citizen.Wait(100)
+								Wait(100)
 							until activeItens[user_id] == nil
 						end
 					end
@@ -1382,7 +1382,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1402,7 +1402,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1429,7 +1429,7 @@ function cRP.useItem(slot,rAmount)
 									end
 								end
 
-								Citizen.Wait(100)
+								Wait(100)
 							until activeItens[user_id] == nil
 						end
 					end
@@ -1488,7 +1488,7 @@ function cRP.useItem(slot,rAmount)
 									end
 								end
 
-								Citizen.Wait(100)
+								Wait(100)
 							until activeItens[user_id] == nil
 						end
 					end
@@ -1652,7 +1652,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1677,7 +1677,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1702,7 +1702,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1727,7 +1727,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1752,7 +1752,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1780,7 +1780,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1804,7 +1804,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1829,7 +1829,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1854,7 +1854,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1880,7 +1880,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1903,7 +1903,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -1926,7 +1926,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2014,7 +2014,7 @@ function cRP.useItem(slot,rAmount)
 								end
 							end
 
-							Citizen.Wait(100)
+							Wait(100)
 						until activeItens[user_id] == nil
 					end
 				return end
@@ -2039,7 +2039,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2062,7 +2062,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2093,7 +2093,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2116,7 +2116,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2139,7 +2139,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2162,7 +2162,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2185,7 +2185,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2208,7 +2208,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2232,7 +2232,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2256,7 +2256,7 @@ function cRP.useItem(slot,rAmount)
 							end
 						end
 
-						Citizen.Wait(100)
+						Wait(100)
 					until activeItens[user_id] == nil
 				return end
 
@@ -2347,7 +2347,7 @@ function cRP.useItem(slot,rAmount)
 								end
 							end
 
-							Citizen.Wait(100)
+							Wait(100)
 						until activeItens[user_id] == nil
 					end
 				return end
@@ -2376,7 +2376,7 @@ function cRP.useItem(slot,rAmount)
 								vRPC.playAnim(otherPlayer,false,{"mp_arrest_paired","crook_p2_back_left"},false)
 								vRPC.playAnim(source,false,{"mp_arrest_paired","cop_p2_back_left"},false)
 
-								Citizen.Wait(3500)
+								Wait(3500)
 
 								vRPC.stopAnim(source,false)
 								vPLAYER.toggleHandcuff(otherPlayer)
@@ -2748,7 +2748,7 @@ AddEventHandler("inventory:verifyObjects",function(entity,service)
 					verifyObjects[user_id] = nil
 				end
 
-				Citizen.Wait(100)
+				Wait(100)
 			until activeItens[user_id] == nil
 		end
 	else

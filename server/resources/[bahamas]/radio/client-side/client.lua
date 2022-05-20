@@ -80,7 +80,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- RADIO:THREADCHECKRADIO
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	SetNuiFocus(false,false)
 
 	while true do
@@ -93,6 +93,6 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(10000)
+		Wait(10000)
 	end
 end)

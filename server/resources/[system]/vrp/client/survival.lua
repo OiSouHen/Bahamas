@@ -27,7 +27,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADUPDATE
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		if playerActive then
 			if GetGameTimer() >= updateTimers then
@@ -46,13 +46,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(5000)
+		Wait(5000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADSYSTEM
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 
@@ -104,7 +104,7 @@ Citizen.CreateThread(function()
 						SetEntityCoordsNoOffset(ped,-1041.25,-2744.99,21.35,false,false,false,true)
 						SendNUIMessage({ death = false })
 
-						Citizen.Wait(1000)
+						Wait(1000)
 
 						DoScreenFadeIn(1000)
 					else
@@ -118,13 +118,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- HEALTHRECHARGE
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		SetPlayerHealthRechargeMultiplier(PlayerId(),0)
 		SetPlayerHealthRechargeLimit(PlayerId(),0)
@@ -134,7 +134,7 @@ Citizen.CreateThread(function()
 			SetPedMaxHealth(PlayerPedId(),200)
 		end
 
-		Citizen.Wait(100)
+		Wait(100)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -179,7 +179,7 @@ end
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADTREATMENT
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	local treatmentTimers = GetGameTimer()
 
 	while true do
@@ -200,13 +200,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(500)
+		Wait(500)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADTIMEDEATH
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	local deathTimers = GetGameTimer()
 
 	while true do
@@ -220,13 +220,13 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(500)
+		Wait(500)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADBUTTONS
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		if deathStatus then
@@ -246,6 +246,6 @@ Citizen.CreateThread(function()
 			DisablePlayerFiring(PlayerPedId(),true)
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)

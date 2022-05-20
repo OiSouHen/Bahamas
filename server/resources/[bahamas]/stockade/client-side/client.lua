@@ -54,7 +54,7 @@ end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADSPAWN
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		if inService then
 			local ped = PlayerPedId()
@@ -65,7 +65,7 @@ Citizen.CreateThread(function()
 				local mHash = GetHashKey("stockade")
 				RequestModel(mHash)
 				while not HasModelLoaded(mHash) do
-					Citizen.Wait(1)
+					Wait(1)
 				end
 
 				spawnVehicle = CreateVehicle(mHash,stockLocates[spawnLocates][1],stockLocates[spawnLocates][2],stockLocates[spawnLocates][3],stockLocates[spawnLocates][4],true,true)
@@ -76,7 +76,7 @@ Citizen.CreateThread(function()
 				NetworkRegisterEntityAsNetworked(spawnVehicle)
 				while not NetworkGetEntityIsNetworked(spawnVehicle) do
 					NetworkRegisterEntityAsNetworked(spawnVehicle)
-					Citizen.Wait(1)
+					Wait(1)
 				end
 
 				if NetworkDoesNetworkIdExist(stockadeNet) then
@@ -103,7 +103,7 @@ Citizen.CreateThread(function()
 				local pHash = GetHashKey("s_m_m_security_01")
 				RequestModel(pHash)
 				while not HasModelLoaded(pHash) do
-					Citizen.Wait(1)
+					Wait(1)
 				end
 
 				stockDriver01 = CreatePedInsideVehicle(spawnVehicle,1,pHash,-1,true,true)
@@ -160,6 +160,6 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(1000)
+		Wait(1000)
 	end
 end)

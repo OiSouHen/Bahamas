@@ -170,7 +170,7 @@ local spawnModels = {
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- VARIABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
-Citizen.CreateThread(function()
+CreateThread(function()
 	while true do
 		local timeDistance = 999
 		local ped = PlayerPedId()
@@ -240,12 +240,12 @@ Citizen.CreateThread(function()
 
 							if DoesEntityExist(currentPassenger) then
 								vSERVER.paymentService()
-								Citizen.Wait(1000)
+								Wait(1000)
 								TaskLeaveVehicle(currentPassenger,vehicle,262144)
 								TaskWanderStandard(currentPassenger,10.0,10)
-								Citizen.Wait(1000)
+								Wait(1000)
 								SetVehicleDoorShut(vehicle,3,0)
-								Citizen.Wait(1000)
+								Wait(1000)
 							end
 
 							FreezeEntityPosition(vehicle,false)
@@ -276,7 +276,7 @@ Citizen.CreateThread(function()
 			end
 		end
 
-		Citizen.Wait(timeDistance)
+		Wait(timeDistance)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -293,7 +293,7 @@ function generatePassenger(vehicle)
 
 	RequestModel(mHash)
 	while not HasModelLoaded(mHash) do
-		Citizen.Wait(1)
+		Wait(1)
 	end
 
 	if HasModelLoaded(mHash) then
@@ -304,7 +304,7 @@ function generatePassenger(vehicle)
 		SetModelAsNoLongerNeeded(mHash)
 
 		while true do
-			Citizen.Wait(1)
+			Wait(1)
 
 			if IsPedSittingInVehicle(currentPassenger,vehicle) then
 				break

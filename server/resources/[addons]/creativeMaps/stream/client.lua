@@ -23,7 +23,7 @@ local pz = 0
 
 --THREADS--
 
-Citizen.CreateThread(function() --Thread d'ajout du point de la mcdonalds sur la carte
+CreateThread(function() --Thread d'ajout du point de la mcdonalds sur la carte
 
   for _, info in pairs(blips) do
 
