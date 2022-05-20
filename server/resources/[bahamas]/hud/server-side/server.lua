@@ -10,32 +10,30 @@ vRP = Proxy.getInterface("vRP")
 cRP = {}
 Tunnel.bindInterface("hud",cRP)
 -----------------------------------------------------------------------------------------------------------------------------------------
--- VARIABLES
+-- GLOBALSTATE
 -----------------------------------------------------------------------------------------------------------------------------------------
-local clockHours = 18
-local clockMinutes = 0
-local weatherSync = "CLEAR"
-local timeDate = GetGameTimer()
+GlobalState["Hours"] = 18
+GlobalState["Minutes"] = 0
+GlobalState["Weather"] = "CLEAR"
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADGLOBAL
 -----------------------------------------------------------------------------------------------------------------------------------------
 CreateThread(function()
 	while true do
-		if GetGameTimer() >= (timeDate + 30000) then
-			timeDate = GetGameTimer()
-			clockMinutes = clockMinutes + 1
-
-			if clockMinutes >= 60 then
-				clockHours = clockHours + 1
-				clockMinutes = 0
-
-				if clockHours >= 24 then
-					clockHours = 0
-				end
+		GlobalState["Minutes"] = GlobalState["Minutes"] + 1
+		
+		if GlobalState["Minutes"] >= 60 then
+			GlobalState["Hours"] = GlobalState["Hours"] + 1
+			GlobalState["Minutes"] = 0
+			
+			if GlobalState["Hours"] >= 24 then
+				GlobalState["Hours"] = 0
 			end
 		end
-
-		Wait(30000)
+		
+		Wait(10000)
+		
+		TriggerClientEvent("hud:syncTimers",-1,{ GlobalState["Hours"],GlobalState["Minutes"],GlobalState["Weather"] })
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -46,10 +44,11 @@ RegisterCommand("timeset",function(source,args,rawCommand)
 		local user_id = vRP.getUserId(source)
 		if user_id then
 			if vRP.hasGroup(user_id,"Admin") then
-				clockHours = parseInt(args[1])
-				clockMinutes = parseInt(args[2])
-				weatherSync = args[3]
-				TriggerClientEvent("hud:syncTimers",-1,{ clockMinutes,clockHours,weatherSync })
+				GlobalState["Hours"] = parseInt(args[1])
+				GlobalState["Minutes"] = parseInt(args[2])
+				GlobalState["Weather"] = args[3]
+				
+				TriggerClientEvent("hud:syncTimers",-1,{ GlobalState["Hours"],GlobalState["Minutes"],GlobalState["Weather"] })
 			end
 		end
 	end
@@ -58,5 +57,5 @@ end)
 -- PLAYERSPAWN
 -----------------------------------------------------------------------------------------------------------------------------------------
 AddEventHandler("vRP:playerSpawn",function(user_id,source)
-	TriggerClientEvent("hud:syncTimers",source,{ clockMinutes,clockHours,weatherSync })
+	TriggerClientEvent("hud:syncTimers",source,{ GlobalState["Hours"],GlobalState["Minutes"],GlobalState["Weather"] })
 end)

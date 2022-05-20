@@ -41,13 +41,6 @@ local divingTank = nil
 local clientOxigen = 100
 local divingTimers = GetGameTimer()
 -----------------------------------------------------------------------------------------------------------------------------------------
--- CLOCKVARIABLES
------------------------------------------------------------------------------------------------------------------------------------------
-local clockHours = 18
-local clockMinutes = 0
-local weatherSync = "CLEAR"
-local timeDate = GetGameTimer()
------------------------------------------------------------------------------------------------------------------------------------------
 -- MUMBLABLES
 -----------------------------------------------------------------------------------------------------------------------------------------
 local Mumble = false
@@ -117,25 +110,29 @@ CreateThread(function()
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
+-- CLOCKVARIABLES
+-----------------------------------------------------------------------------------------------------------------------------------------
+local timeDate = GetGameTimer()
+-----------------------------------------------------------------------------------------------------------------------------------------
 -- THREADGLOBAL
 -----------------------------------------------------------------------------------------------------------------------------------------
 CreateThread(function()
 	while true do
 		if GetGameTimer() >= timeDate then
 			timeDate = GetGameTimer() + 10000
-			clockMinutes = clockMinutes + 1
+			GlobalState["Minutes"] = GlobalState["Minutes"] + 1
 
-			if clockMinutes >= 60 then
-				clockHours = clockHours + 1
-				clockMinutes = 0
+			if GlobalState["Minutes"] >= 60 then
+				GlobalState["Hours"] = GlobalState["Hours"] + 1
+				GlobalState["Minutes"] = 0
 
-				if clockHours >= 24 then
-					clockHours = 0
+				if GlobalState["Hours"] >= 24 then
+					GlobalState["Hours"] = 0
 				end
 			end
 		end
 
-		Wait(5000)
+		Wait(10000)
 	end
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
@@ -149,12 +146,12 @@ CreateThread(function()
 			SetWeatherTypeNowPersist("CLEAR")
 			NetworkOverrideClockTime(00,00,00)
 		else
-			SetWeatherTypeNow(weatherSync)
-			SetWeatherTypePersist(weatherSync)
-			SetWeatherTypeNowPersist(weatherSync)
-			NetworkOverrideClockTime(clockHours,clockMinutes,00)
+			SetWeatherTypeNow(GlobalState["Weather"])
+			SetWeatherTypePersist(GlobalState["Weather"])
+			SetWeatherTypeNowPersist(GlobalState["Weather"])
+			NetworkOverrideClockTime(GlobalState["Hours"],GlobalState["Minutes"],00)
 		end
-
+		
 		if beltLock >= 1 then
 			DisableControlAction(1,75,true)
 		end
@@ -469,9 +466,9 @@ RegisterKeyMapping("seatbelt","Colocar/Retirar o cinto.","keyboard","g")
 -----------------------------------------------------------------------------------------------------------------------------------------
 RegisterNetEvent("hud:syncTimers")
 AddEventHandler("hud:syncTimers",function(timer)
-	clockHours = parseInt(timer[2])
-	clockMinutes = parseInt(timer[1])
-	weatherSync = timer[3]
+	GlobalState["Hours"] = parseInt(timer[1])
+	GlobalState["Minutes"] = parseInt(timer[2])
+	GlobalState["Weather"] = timer[3]
 end)
 -----------------------------------------------------------------------------------------------------------------------------------------
 -- HOMES:HOURS
