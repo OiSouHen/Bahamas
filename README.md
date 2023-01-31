@@ -1,13 +1,4 @@
--------
+# Hensa Rework
+Maiores informações você só encontra em nossa __Comunidade__: [Clique aqui](https://discord.gg/5BVWp7Zxpe).
 
-#### Bahamas
-> Connections: oxmysql, oxdrive.
-
-> DLC: The Cayo Perico Heist.
-
-> Artifacts/Build: 5473.
-
--------
-
-#### Crensa
-Você pode entrar em nosso grupo e ter acesso a atualizações e diversos canais informantes sobre a Base - [Discord](https://discord.gg/RCgdWDZNwU).
+![Hensa Rewritten](https://cdn.discordapp.com/attachments/842417388040749067/1069765310195957760/2.png "Hensa Rewritten")
