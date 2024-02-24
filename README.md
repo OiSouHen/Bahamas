@@ -4,7 +4,7 @@
 -------
 
 ### 💬 Comunidade
-Maiores informações você só encontra em nosso **Discord**: [Clique aqui para entrar](https://discord.gg/95mzD4v5Sg).
+Maiores informações você só encontra em nosso **Discord**: [Clique aqui para entrar](https://discord.gg/Qhxnvc4Ehu).
 
 -------
 
